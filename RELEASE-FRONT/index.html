@@ -1,0 +1,3680 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Faraday" name="description"/>
+<meta content="Faradaysec" name="author"/>
+<link href="https://faradaysec.com/RELEASE-FRONT/" rel="canonical"/>
+<link href="../RELEASE/" rel="prev"/>
+<link href="../Architecture/" rel="next"/>
+<link href="../images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.2, mkdocs-material-9.1.21" name="generator"/>
+<title>Faraday Front - Faraday</title>
+<link href="../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Rubik";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/faraday_doc.css" rel="stylesheet"/>
+<link href="../stylesheets/hover.css" rel="stylesheet"/>
+<link href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-BEQW65R59H"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-BEQW65R59H",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-BEQW65R59H",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#1033-jun-1st-2023">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Faraday" class="md-header__button md-logo" data-md-component="logo" href=".." title="Faraday">
+<img alt="logo" src="../images/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Faraday
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Faraday Front
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/infobyte/faraday" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 480 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg>
+</div>
+<div class="md-source__repository">
+    infobyte/faraday
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Faraday" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Faraday">
+<img alt="logo" src="../images/logo.svg"/>
+</a>
+    Faraday
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/infobyte/faraday" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 480 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg>
+</div>
+<div class="md-source__repository">
+    infobyte/faraday
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Home
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Installing Faraday
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Installing Faraday
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Install-guide-Linux/">
+        Linux
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Install-guide-Redhat-8/">
+        RedHat 8/Centos
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Install-guide-Docker/">
+        Docker
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Install-guide-community/">
+        Community
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          Advanced
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+          Advanced
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Install-guide-Advanced/">
+        Advanced Install
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Remote-PostgreSQL/">
+        Remote PostgreSQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../NGINX-Setup/">
+        NGINX (SSL Config)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Install-guide-Troubleshooting/">
+        Troubleshooting
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Update/">
+        Update
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Backup-v4/">
+        Backup
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Getting-started/">
+        First Steps
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Changelog
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Changelog
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../RELEASE/">
+        Faraday Server
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Faraday Front
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Faraday Front
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1033-jun-1st-2023">
+    1.0.33 [Jun 1st, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1032-may-29th-2023">
+    1.0.32 [May 29th, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1031-apr-3rd-2023">
+    1.0.31 [Apr 3rd, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1030-feb-9th-2023">
+    1.0.30 [Feb 9th, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1029-jan-3rd-2023">
+    1.0.29 [Jan 3rd, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1851-implement-bulk-delete-on-hostassets">
+    1851 Implement bulk delete on host/assets
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1945-fix-select-all-issues">
+    1945  Fix select all issues
+  </a>
+<nav aria-label="1945 Fix select all issues" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1028-dic-14th-2022">
+    1.0.28 [Dic 14th, 2022]:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1904-fix-delete-button-loading-state">
+    1904 Fix delete button loading state
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1939-fix-select-all-label">
+    1939 fix select all label
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1943-automatic-version-update">
+    1943 Automatic version update
+  </a>
+<nav aria-label="1943 Automatic version update" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1027-dec-1st-2022">
+    1.0.27 [Dec 1st, 2022]:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1811-new-custom-attributes-feature-for-apply-templates">
+    1811. New custom attributes feature for Apply Templates.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1822-refactor-actionbar">
+    1822. Refactor ActionBar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1843-remove-redundant-filter-on-dashboard">
+    1843 Remove redundant filter on dashboard
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1854-refactor-actionbar-component-in-manage">
+    1854. Refactor ActionBar component in Manage.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1855-refactor-actionbar-component-in-kb">
+    1855. Refactor ActionBar component in KB.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1856-refactor-actionbar-component-in-assets">
+    1856. Refactor ActionBar component in Assets.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1857-refactor-actionbar-component-in-users">
+    1857. Refactor ActionBar component in Users.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1865-change-reports-names">
+    1865 Change reports names
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1883-fixes-in-the-style-of-copy-icon-in-command-history">
+    1883. Fixes in the style of copy icon in command history.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1888-fix-lowercase-cve">
+    1888 Fix lowercase cve
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1891-select-all-implementation">
+    1891 Select all implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1895-changes-names-to-asset">
+    1895 Changes names to asset
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1896-fix-save-job-as-new-when-has-the-same-name">
+    1896. Fix save job as new when has the same name.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1897-fix-run-icon-of-pipeline-when-is-disabled">
+    1897. Fix run icon of pipeline when is disabled.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1906-fix-delete-message-in-jobs">
+    1906. Fix delete message in jobs.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1916-fix-asset-name-change">
+    1916 Fix asset name change
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1917-fix-jobs-issues">
+    1917 Fix Jobs issues
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1918-formas-cve-and-risk-score">
+    1918 Formas cve and risk score
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1919-fix-analytics-dashboard-issues">
+    1919 Fix analytics dashboard issues
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1923-fix-description-and-resolution-fields-on-manual-kb-creation">
+    1923 Fix description and resolution fields on manual kb creation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1926-comments-truncate">
+    1926 Comments truncate
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1927-column-asset-fix">
+    1927 Column Asset fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1933-fix-scope-field-in-ws-creation">
+    1933 Fix scope field in ws creation
+  </a>
+<nav aria-label="1933 Fix scope field in ws creation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1026">
+    1.0.26:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1507-change-commands-endpoint-to-global_commandsid-and-remove-ws">
+    1507. Change commands endpoint to global_commands/id and remove ws.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1810-add-custom-attributes-tab-in-kb-manual-creation">
+    1810. Add custom attributes tab in kb manual creation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1813-add-role-permissions-in-agents-endpoint-in-login">
+    1813. Add role permissions in /agents endpoint in login.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1827-add-cve-filter-in-searchbar">
+    1827. ADD CVE filter in searchbar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1828-workspaces-in-grid-view-sorted-by-critical-vulns-count">
+    1828. Workspaces in grid view sorted by critical vulns count.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1829-change-the-default-order-by-important-vulnerabilities-in-the-assets-view">
+    1829. Change the default order by important vulnerabilities in the assets view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1831-fix-width-of-notifications-count">
+    1831. Fix width of notification's count.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1833-remove-ws-selector-in-swagger-view">
+    1833. Remove ws selector in swagger view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1834-change-documentation-link-in-import-modal-of-kb">
+    1834. Change documentation link in import modal of kb.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1835-fix-upgrade-license-modal-in-ws-creation">
+    1835. Fix upgrade license modal in ws creation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1837-fixes-owner-roles-permissions">
+    1837. Fixes owner roles permissions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1839-correcciones-campos-enrichment">
+    1839 correcciones campos enrichment
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1844-fix-list-components-width-of-custom-attributes-in-vuln-creation-and-template-creation">
+    1844. Fix list component's width of custom attributes in vuln creation and template creation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1848-fix-manual-vuln-creation-bugs">
+    1848 Fix manual vuln creation bugs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1849-added-risk-and-important-fields-to-table-manage-host-ws">
+    1849 Added risk and important fields to table (manage, host, ws)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1853-enabling-delete-button-in-the-action-bar-also-adding-warning-modal-and-confirmation-modal-in-workspace-section">
+    1853. Enabling delete button in the action bar, also adding warning modal and confirmation modal in workspace section.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1858-fixes-upgrade-plan-texts">
+    1858. Fixes upgrade plan texts.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1861-add-cvss2-cvss3-and-risk-score-filters-in-searchbar">
+    1861. ADD cvss2, cvss3 and risk score filters in searchbar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1862-change-tags-button-in-vulnerability-detail">
+    1862. Change tags button in vulnerability detail.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1867-fixes-in-risk-and-vuln-detail-styles">
+    1867. Fixes in risk and vuln detail styles.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1868-new-feature-importance-wsassets">
+    1868. New feature "Importance ws/assets"
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1869-add-default-and-grouped-subtabs-in-reports-template-selection">
+    1869. ADD default and grouped subtabs in report's template selection.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1870-fixes-duplicate-component">
+    1870. Fixes Duplicate component.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1871-fix-references-and-policy-details-block">
+    1871 Fix references and policy details block
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1872-fix-crash-in-custom-template-selection-in-reports-view">
+    1872. Fix crash in custom template selection in report's view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1875-fix-validation-of-web-vulns-creation">
+    1875. Fix validation of web vulns creation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1877-risk-is-allowed-for-faraday-corp-cloud-licenes">
+    1877. Risk is allowed for faraday-corp-cloud licenes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1879-fix-columns-order-in-manage">
+    1879. Fix columns order in manage.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1880-fixes-staging-issues">
+    1880. Fixes staging issues
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1882-new-command-history-update-fix">
+    1882 New command history update fix.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1884-fix-custom-grouped-reports">
+    1884. Fix custom grouped reports.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1890-add-anchor-to-references-in-exploitable-and-patchable-tags">
+    1890. Add anchor to references in exploitable and patchable tags.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1892-fixes-choice-field-in-custom-attributes">
+    1892. Fixes choice field in custom attributes.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1894-fixes-references-context-menu-field">
+    1894 Fixes references context menu field
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1898-fixes-empty-refs">
+    1898 Fixes empty refs
+  </a>
+<nav aria-label="1898 Fixes empty refs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1024-september-7th-2022">
+    1.0.24 [September 7th, 2022]:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1667-ui-kit-add-typographic-styles">
+    1667 Ui kit. Add typographic styles.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1670-ui-kit-add-select-component">
+    1670 Ui kit. Add select component.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-vulns-by-severity-in-dashboard-doesnt-work-properly">
+    1743 Fixes vulns by severity in Dashboard doesnt work properly.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-most-vulnerable-assets-in-dashboard-doesnt-work-properly">
+    1743 Fixes most vulnerable assets in Dashboard doesnt work properly.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-improve-styling">
+    1743 Improve styling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-latest-all-vulns-doesnt-work-properly">
+    1743 Fixes latest all vulns doesnt work properly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1771-swagger-api-implementation">
+    1771 Swagger api implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1772-dashboard-typos-fix">
+    1772 Dashboard Typos fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1775-change-width-of-name-column-on-hostdetails-table">
+    1775 Change width of name column on hostDetail's table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1778-add-web-vulns-fields-in-vuln-creation-and-vuln-detail">
+    1778. Add web vulns fields in vuln creation and vuln detail.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1780-replace-issuetracker_json-field-for-issuetracker">
+    1780 Replace issuetracker_json field for issuetracker
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1795-risk-information-and-cve-fields-added-to-vulndetail">
+    1795 Risk information and cve fields added to vulnDetail
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1796-add-shell-icon-in-activity-feed-card-and-fix-overflow-in-the-title-of-ws-in-grid-view">
+    1796. Add shell icon in activity feed card. And fix overflow in the title of ws in grid view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1820-fix-removed-searchbar-and-actionbar-when-entering-data-on-an-empty-ws-via-faraday-cli-and-reset-filters-when-switching-workspaces">
+    1820. Fix removed searchbar and actionbar when entering data on an empty ws via faraday cli. And reset filters when switching workspaces.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1821-apply-template-reference-fix">
+    1821 apply template reference fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1825-confirmed-flag-error-fix">
+    1825 Confirmed flag error fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1836-pre-release-corrections">
+    1836 pre release corrections
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1015-adds-new-searchbarfiltering-function-in-vuln-templates-knowledge-base">
+    1015 Adds new searchbar/filtering function in Vuln Templates (Knowledge Base)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1296-adds-port-validation-when-creating-a-service">
+    1296 Adds port validation when creating a service
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1338-restricts-send-to-tool-when-user-is-not-admin">
+    1338 Restricts send to tool when user is not admin
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1457-add-ids-in-ws-creation-modal">
+    1457 Add ids in ws creation modal.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1459-adds-error-description-when-creating-pipeline-or-job-with-existing-name">
+    1459 Adds error description when creating pipeline or job with existing name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1460-changes-in-users-view-add-search-bar-add-users-table-default-order-and-order-by-roles-column-refactor-users-component">
+    1460 Changes in users view, add search bar, add users table default order and order by roles column. Refactor users component.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1473-changes-name-validation-error-on-workspace-creation-and-modifies-style">
+    1473 Changes name validation error on workspace creation and modifies style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1512-removes-double-click-on-workspaces-table-added-selection-of-active-ws-to-name-on-both-grid-and-list-view-set-grid-view-as-default">
+    1512 Removes double click on workspaces table, added selection of active ws to name on both grid and list view, set grid view as default.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1521-add-ids-in-workspaces-dropdown">
+    1521 Add ids in workspaces dropdown.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1535-add-current-username-and-proptypes">
+    1535 Add current username and proptypes.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1541-change-mac-address-input-and-add-validation">
+    1541 Change mac address input and add validation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1545-reset-filters-state-when-unmounting-reports-view">
+    1545 Reset filters state when unmounting reports view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1592-fixing-some-minor-issues-in-analtycs">
+    1592 Fixing some minor issues in analtycs.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1595-new-kb-vulneravility-feature-bulk-update-and-apply-template">
+    1595 New KB vulneravility feature (bulk update and apply template)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1610-fix-bug-when-user-is-deleted-and-open-creation-modal-the-data-of-the-previous-user-remains-in-the-modal">
+    1610 fix bug when user is deleted and open creation modal the data of the previous user remains in the modal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1611-fixes-asset-and-client-roles-permission">
+    1611 Fixes asset and client roles permission
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1614-fix-rol-permissions-in-agents-and-scheduler">
+    1614 Fix rol permissions in agents and scheduler.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1615-fix-rol-client-permissions-in-reports">
+    1615 fix rol client permissions in reports
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1625-add-new-activity-feed-design">
+    1625 add new activity feed design
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1630-add-agents-submenu-in-the-sidebar-of-community-and-add-proptypes">
+    1630 add agents submenu in the sidebar of community and add proptypes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1635-fix-bug-get-tags-list-when-loading-manage-view">
+    1635 Fix bug get tags list when loading manage view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1638-fix-width-of-dropdowns-in-ticketing-tools">
+    1638 Fix width of dropdowns in ticketing tools.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1648-removing-bootstrap-dependency-and-adding-bootstrap-style">
+    1648 Removing bootstrap dependency and adding bootstrap style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1655-changes-solarwinds-web-help-desk-icon">
+    1655 Changes SolarWinds Web Help Desk icon
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1656-changed-comment-tab-displaying-behaviour-on-planner-added-comment-button">
+    1656 Changed comment tab displaying behaviour on planner. Added comment button.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1666-added-colors-to-ui-kit">
+    1666 Added colors to UI kit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1667-ui-kit-add-typographic-styles_1">
+    1667 Ui kit. Add typographic styles.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1670-ui-kit-add-select-component_1">
+    1670 Ui kit. Add select component.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1681-add-redirect-when-a-hosts-comment-is-clicked">
+    1681 Add redirect when a host's comment is clicked.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1686-close-user-feedback-when-clicking-done-button">
+    1686 Close user feedback when clicking done button.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1688-change-vulns-by-status-graph-and-library-in-feed-1688">
+    1688 Change vulns by status graph and library in feed. 1688.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1695-hide-edit-icon-in-reports-when-user-is-client-and-fix-text-of-createedit-button-1688">
+    1695 Hide edit icon in reports when user is client and fix text of create/edit button. 1688.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1696-adds-new-tour-sections-fix-tour-bug-in-activity-dashboards-item-in-sidebar">
+    1696 Adds new tour sections. Fix tour bug in activity dashboard's item in sidebar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1698-remove-fields-from-fields-dropdown-of-tasks-that-are-not-allowed">
+    1698 Remove fields from fields dropdown of tasks that are not allowed.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1707-fixes-bug-when-removing-workspaces-not-refreshing-the-table-properly">
+    1707 Fixes bug when removing workspaces not refreshing the table properly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1709-fix-agents-tools-modal-and-add-repo_name-in-yaml">
+    1709 Fix agents tools modal and add repo_name in yaml.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1710-fix-save-job-issue">
+    1710 Fix save job issue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1712-fixes-bug-of-app-crashing-due-to-eslint-changes-on-exhaustive-deps">
+    1712 Fixes bug of app crashing due to ESLint changes on exhaustive deps.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1713-adds-date-filtering-on-vulns">
+    1713 Adds date filtering on vulns
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1717-fixes-style-issues-in-the-gant-and-split-view-of-planner">
+    1717 Fixes style issues in the gant and split view of planner.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1721-fix-edit-ws-in-scheduler">
+    1721 Fix edit ws in scheduler.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1724-fixes-several-minor-issues-in-analytics">
+    1724 Fixes several minor issues in Analytics.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1726-add-external-id-and-tool-fields-in-jobs">
+    1726 Add external id and tool fields in jobs.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1739-adds-ldap-feature-validation-on-users">
+    1739 Adds LDAP feature validation on users
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1741-secret-keys-hidden">
+    1741 Secret keys hidden
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-vulns-by-severity-in-dashboard-doesnt-work-properly_1">
+    1743 Fixes vulns by severity in Dashboard doesnt work properly.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-most-vulnerable-assets-in-dashboard-doesnt-work-properly_1">
+    1743 Fixes most vulnerable assets in Dashboard doesnt work properly.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-improve-styling_1">
+    1743 Improve styling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-latest-all-vulns-doesnt-work-properly_1">
+    1743 Fixes latest all vulns doesnt work properly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1745-the-behaviour-related-to-table-and-states-is-setted-to-be-the-same-in-several-pages">
+    1745 The behaviour related to table and states is setted to be the same in several pages.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1747-adds-api-version-fetching-before-login">
+    1747 Adds api version fetching before login
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1749-fixes-bug-when-fetching-first-scan-command-id">
+    1749 Fixes bug when fetching first scan command id
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1750-fix-crash-when-creating-a-report">
+    1750 Fix crash when creating a report.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1752-fixes-bug-of-several-fields-on-manual-vuln-creation-being-cleared-when-switching-between-tabs-and-fixed-performance-issues-when-typing">
+    1752 Fixes bug of several fields on Manual Vuln Creation being cleared when switching between tabs, and fixed performance issues when typing.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1755-adds-title-on-scheduler-view-and-moved-add-schedule-button-to-the-right-of-the-actionbar">
+    1755 Adds title on Scheduler view and moved 'Add Schedule' button to the right of the actionbar"
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1756-adds-ignore-informational-vulnerabilities-and-resolve-hostnames-flags-on-agent-execution">
+    1756 Adds 'Ignore informational vulnerabilities' and 'Resolve hostnames' flags on agent execution
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1757-fixes-confirmedclosed-dropdown-selector-on-dashboard-overlapping-counts">
+    1757 Fixes confirmed/closed dropdown selector on dashboard overlapping counts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1758-fixes-bug-of-label-overflowing-from-vuln-template-dropdown-selector-when-applying-a-vuln-template">
+    1758 Fixes bug of label overflowing from vuln template dropdown selector when applying a vuln template
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1759-sets-height-limit-to-apply-vuln-template-modal">
+    1759 Sets height limit to 'apply vuln template' modal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1768-fix-colors-in-status-dropdown-of-vulnerability-detail-1768">
+    1768 Fix colors in status dropdown of vulnerability detail. 1768.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1769-adds-autotagging-feature-when-importing-vulns">
+    1769 Adds autotagging feature when importing vulns
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1771-swagger-api-implementation_1">
+    1771 Swagger api implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1772-dashboard-typos-fix_1">
+    1772 Dashboard Typos fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1775-change-width-of-name-column-on-hostdetails-table_1">
+    1775 Change width of name column on hostDetail's table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1778-add-web-vulns-fields-in-vuln-creation-and-vuln-detail_1">
+    1778. Add web vulns fields in vuln creation and vuln detail.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1779-add-field-scope-in-ws-creation-1779">
+    1779 Add field scope in ws creation. 1779.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1780-replace-issuetracker_json-field-for-issuetracker_1">
+    1780 Replace issuetracker_json field for issuetracker
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1783-add-portals-request-in-community-for-metrics-1783">
+    1783 Add portal's request in community for metrics. 1783.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1785-removes-several-warnings-on-debugger-console">
+    1785 Removes several warnings on debugger console.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1786-fix-references-1786">
+    1786 Fix references. 1786.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1787-adds-new-scrollable-feature-to-vulnerability-detail">
+    1787 Adds new scrollable feature to vulnerability detail
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1789-fixes-a-bug-of-not-displaying-actionbar-on-workspace-view-and-refactored-code">
+    1789 Fixes a bug of not displaying actionbar on workspace view and refactored code.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1790-fixes-double-requests-when-opening-vuln-detail">
+    1790 Fixes double requests when opening vuln detail
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1795-risk-information-and-cve-fields-added-to-vulndetail_1">
+    1795 Risk information and cve fields added to vulnDetail
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1796-add-shell-icon-in-activity-feed-card-and-fix-overflow-in-the-title-of-ws-in-grid-view_1">
+    1796. Add shell icon in activity feed card. And fix overflow in the title of ws in grid view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1798-changes-vulns-import-modal-style-adds-error-status-validation">
+    1798 Changes vulns import modal style, adds 'Error' status validation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1800-fixes-bug-of-not-being-able-to-save-editions-on-workspaces">
+    1800 Fixes bug of not being able to save editions on workspaces
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1802-fixes-bug-of-markdown-editor-not-showing-content-when-disabled">
+    1802 Fixes bug of Markdown editor not showing content when disabled
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1808-added-refresh-button-to-manage">
+    1808 Added refresh button to manage.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1812-adds-evidence-preview-and-modified-image-preview-styles">
+    1812 Adds evidence preview and modified image preview styles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1820-fix-removed-searchbar-and-actionbar-when-entering-data-on-an-empty-ws-via-faraday-cli-and-reset-filters-when-switching-workspaces_1">
+    1820. Fix removed searchbar and actionbar when entering data on an empty ws via faraday cli. And reset filters when switching workspaces.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1821-apply-template-reference-fix_1">
+    1821 apply template reference fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1823-fixes-bug-when-adding-tags-on-file-import-without-vulns-uploaded">
+    1823 Fixes bug when adding tags on file import without vulns uploaded.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1824-fixes-vuln-detail-width">
+    1824 Fixes vuln detail width.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1825-confirmed-flag-error-fix_1">
+    1825 Confirmed flag error fix
+  </a>
+<nav aria-label="1825 Confirmed flag error fix" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1023-july-28th-2022">
+    1.0.23 [July 28th, 2022]:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1805-resolver-conflictos-entre-rama-communityprofessional">
+    1805 - Resolver conflictos entre rama community/professional
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1515-fixes-login-style">
+    1515 Fixes login style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1540-adds-validation-to-saml-and-ldap-users-on-creation-modal">
+    1540 Adds validation to saml and ldap users on creation modal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1624-added-new-dashboard-filters">
+    1624 Added new Dashboard filters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1639-add-asterisks-in-service-modal">
+    1639 Add asterisks in service modal.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1649-removing-unused-libraries">
+    1649 Removing unused libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1661-replace-markdown-component-in-manual-vuln-creation-with-new-one">
+    1661 Replace markdown component in manual vuln creation with new one.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1662-adds-new-cloud-agents-feature-and-changes-agent-logic-now-workspace-selection-is-an-execution-param-instead-of-a-creation-param">
+    1662 Adds new Cloud Agents feature and changes agent logic, now workspace selection is an execution param instead of a creation param.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1664-sets-version-132-of-react-markdown-editor-lite">
+    1664 Sets version 1.3.2 of react-markdown-editor-lite
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1674-ui-kit-add-textfield-component-1674">
+    1674 UI kit. Add textfield component. 1674.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1675-ui-kit-add-new-textarea-component-1675">
+    1675 Ui Kit. Add new textarea component (1675)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1690-add-create-date-and-owner-order-remove-unused-vendor-column-in-assets">
+    1690 Add create date and owner order. Remove unused vendor column in assets.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1693-fix-filter-bugs">
+    1693 Fix filter bugs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1697-reset-order-by-and-fix-group-by-issue">
+    1697 Reset order by and fix group by issue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1699-fixes-bug-when-filtering-on-workspace-modified-searchbar-style-to-make-it-consistent">
+    1699 Fixes bug when filtering on workspace, modified searchbar style to make it consistent
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1715-fixes-crash-when-entering-to-kb-view-and-trying-to-get-vuln-templates">
+    1715 Fixes crash when entering to KB view and trying to get vuln templates.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1719-fix-bug-when-opening-host-detail">
+    1719 Fix bug when opening host detail.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1720-fix-assets-typos">
+    1720 Fix assets typos.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1723-adds-feature-flag-validation-on-pro-features">
+    1723 Adds feature flag validation on pro features.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1725-add-fields-tool-and-external_id-in-search-bar">
+    1725 Add fields tool and external_id in search bar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1728-vulns-by-assets-sorted-from-critical-to-low-by-default">
+    1728 Vulns by assets sorted from critical to low by default
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1730-fixes-input-exports-to-make-it-consistent-between-branches-enabling-checkout-without-errors">
+    1730 Fixes Input exports to make it consistent between branches, enabling checkout without errors
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1732-removes-mock-user-and-executive-report-vieww">
+    1732 Removes mock user and executive report vieww
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1735-adds-new-readme-and-removes-tracking">
+    1735 Adds new readme and removes tracking.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1742-fixes-autofill-bug-when-login-in">
+    1742 Fixes autofill bug when login in
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1746-fixes-dropdown-position-on-vuln-creation">
+    1746 Fixes dropdown position on vuln creation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1754-adds-title-on-agents-view-and-moved-add-agent-button-to-the-right-of-the-actionbar">
+    1754 Adds title on Agents view and moved 'Add Agent' button to the right of the actionbar
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1788-fixes-conflicts-between-comm-and-prof-branches">
+    1788 Fixes conflicts between comm and prof branches
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1805-resolver-conflictos-entre-rama-communityprofessional_1">
+    1805 - Resolver conflictos entre rama community/professional
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Using Faraday
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Using Faraday
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Architecture/">
+        Arch
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          API
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api-swagger/">
+        Openapi
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../API-Server/">
+        API Server
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../API-Token/">
+        API Token
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Faraday Manage
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+          Faraday Manage
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Faraday-Manage/">
+        Faraday Manage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Faraday-Manage-Settings-v4/">
+        Faraday Manage Settings
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          Extras
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+          Extras
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Burp-proxy-extender/">
+        Burp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../beef/">
+        Beef
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          Integrations
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+          Integrations
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../integration-gitlab/">
+        GitLab
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../integration-jira/">
+        Jira
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../integration-solarwinds/">
+        SolarWinds
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../integration-servicenow/">
+        ServiceNow
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../LDAP/">
+        LDAP
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../LDAP-OKTA/">
+        LDAP with OKTA
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6_3" id="__nav_5_6_3_label" tabindex="0">
+          SSO
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_6_3">
+<span class="md-nav__icon md-icon"></span>
+          SSO
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../SAML/">
+        Faraday configuration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../SAML-Auth0/">
+        Auth0 integration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../SAML-Google/">
+        Google integration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../SAML-Okta/">
+        Okta integration
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Factor-Authentication/">
+        2nd Factor
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Workspaces/">
+        Workspaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Activity-Dashboard/">
+        Activity Dashboard
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vulns/">
+        Vulnerability Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vulnerability-Templates-KB/">
+        Vulnerability KB
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Assets-and-Services-v4/">
+        Assets and Services
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+          Reports
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_12_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_12">
+<span class="md-nav__icon md-icon"></span>
+          Reports
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Report-v4/">
+        What is Report
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../How-to-build-your-template/">
+        How to Build Your Own Template
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Jinja2-context/">
+        Jinja2 Context
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../import/">
+        Importing
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Planner/">
+        Planner
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Automation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Automation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../agents-v4/">
+        Agents
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Scheduling/">
+        Scheduler
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Pipelines/">
+        Pipelines and jobs
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../First-Steps/">
+        First Steps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Dashboard-v4/">
+        Dashboard
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Custom-Fields-v4/">
+        Custom Attributes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Faraday Cli
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+          Faraday Cli
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../faraday-cli/">
+        Faraday cli
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Settings-v4/">
+        Settings
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Scripts/">
+        Scripts
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13" type="checkbox"/>
+<label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+          For Developers
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_13">
+<span class="md-nav__icon md-icon"></span>
+          For Developers
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Basic-plugin-development/">
+        Plugin Development
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_14" type="checkbox"/>
+<label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+          FAQs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_14_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_14">
+<span class="md-nav__icon md-icon"></span>
+          FAQs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Contact-us/">
+        Contact Us
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FAQ/">
+        FAQs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Plugin-List-v4/">
+        Supported-Plugins
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Troubleshooting/">
+        Troubleshooting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1033-jun-1st-2023">
+    1.0.33 [Jun 1st, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1032-may-29th-2023">
+    1.0.32 [May 29th, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1031-apr-3rd-2023">
+    1.0.31 [Apr 3rd, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1030-feb-9th-2023">
+    1.0.30 [Feb 9th, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1029-jan-3rd-2023">
+    1.0.29 [Jan 3rd, 2023]:
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1851-implement-bulk-delete-on-hostassets">
+    1851 Implement bulk delete on host/assets
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1945-fix-select-all-issues">
+    1945  Fix select all issues
+  </a>
+<nav aria-label="1945 Fix select all issues" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1028-dic-14th-2022">
+    1.0.28 [Dic 14th, 2022]:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1904-fix-delete-button-loading-state">
+    1904 Fix delete button loading state
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1939-fix-select-all-label">
+    1939 fix select all label
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1943-automatic-version-update">
+    1943 Automatic version update
+  </a>
+<nav aria-label="1943 Automatic version update" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1027-dec-1st-2022">
+    1.0.27 [Dec 1st, 2022]:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1811-new-custom-attributes-feature-for-apply-templates">
+    1811. New custom attributes feature for Apply Templates.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1822-refactor-actionbar">
+    1822. Refactor ActionBar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1843-remove-redundant-filter-on-dashboard">
+    1843 Remove redundant filter on dashboard
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1854-refactor-actionbar-component-in-manage">
+    1854. Refactor ActionBar component in Manage.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1855-refactor-actionbar-component-in-kb">
+    1855. Refactor ActionBar component in KB.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1856-refactor-actionbar-component-in-assets">
+    1856. Refactor ActionBar component in Assets.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1857-refactor-actionbar-component-in-users">
+    1857. Refactor ActionBar component in Users.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1865-change-reports-names">
+    1865 Change reports names
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1883-fixes-in-the-style-of-copy-icon-in-command-history">
+    1883. Fixes in the style of copy icon in command history.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1888-fix-lowercase-cve">
+    1888 Fix lowercase cve
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1891-select-all-implementation">
+    1891 Select all implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1895-changes-names-to-asset">
+    1895 Changes names to asset
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1896-fix-save-job-as-new-when-has-the-same-name">
+    1896. Fix save job as new when has the same name.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1897-fix-run-icon-of-pipeline-when-is-disabled">
+    1897. Fix run icon of pipeline when is disabled.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1906-fix-delete-message-in-jobs">
+    1906. Fix delete message in jobs.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1916-fix-asset-name-change">
+    1916 Fix asset name change
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1917-fix-jobs-issues">
+    1917 Fix Jobs issues
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1918-formas-cve-and-risk-score">
+    1918 Formas cve and risk score
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1919-fix-analytics-dashboard-issues">
+    1919 Fix analytics dashboard issues
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1923-fix-description-and-resolution-fields-on-manual-kb-creation">
+    1923 Fix description and resolution fields on manual kb creation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1926-comments-truncate">
+    1926 Comments truncate
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1927-column-asset-fix">
+    1927 Column Asset fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1933-fix-scope-field-in-ws-creation">
+    1933 Fix scope field in ws creation
+  </a>
+<nav aria-label="1933 Fix scope field in ws creation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1026">
+    1.0.26:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1507-change-commands-endpoint-to-global_commandsid-and-remove-ws">
+    1507. Change commands endpoint to global_commands/id and remove ws.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1810-add-custom-attributes-tab-in-kb-manual-creation">
+    1810. Add custom attributes tab in kb manual creation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1813-add-role-permissions-in-agents-endpoint-in-login">
+    1813. Add role permissions in /agents endpoint in login.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1827-add-cve-filter-in-searchbar">
+    1827. ADD CVE filter in searchbar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1828-workspaces-in-grid-view-sorted-by-critical-vulns-count">
+    1828. Workspaces in grid view sorted by critical vulns count.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1829-change-the-default-order-by-important-vulnerabilities-in-the-assets-view">
+    1829. Change the default order by important vulnerabilities in the assets view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1831-fix-width-of-notifications-count">
+    1831. Fix width of notification's count.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1833-remove-ws-selector-in-swagger-view">
+    1833. Remove ws selector in swagger view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1834-change-documentation-link-in-import-modal-of-kb">
+    1834. Change documentation link in import modal of kb.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1835-fix-upgrade-license-modal-in-ws-creation">
+    1835. Fix upgrade license modal in ws creation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1837-fixes-owner-roles-permissions">
+    1837. Fixes owner roles permissions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1839-correcciones-campos-enrichment">
+    1839 correcciones campos enrichment
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1844-fix-list-components-width-of-custom-attributes-in-vuln-creation-and-template-creation">
+    1844. Fix list component's width of custom attributes in vuln creation and template creation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1848-fix-manual-vuln-creation-bugs">
+    1848 Fix manual vuln creation bugs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1849-added-risk-and-important-fields-to-table-manage-host-ws">
+    1849 Added risk and important fields to table (manage, host, ws)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1853-enabling-delete-button-in-the-action-bar-also-adding-warning-modal-and-confirmation-modal-in-workspace-section">
+    1853. Enabling delete button in the action bar, also adding warning modal and confirmation modal in workspace section.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1858-fixes-upgrade-plan-texts">
+    1858. Fixes upgrade plan texts.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1861-add-cvss2-cvss3-and-risk-score-filters-in-searchbar">
+    1861. ADD cvss2, cvss3 and risk score filters in searchbar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1862-change-tags-button-in-vulnerability-detail">
+    1862. Change tags button in vulnerability detail.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1867-fixes-in-risk-and-vuln-detail-styles">
+    1867. Fixes in risk and vuln detail styles.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1868-new-feature-importance-wsassets">
+    1868. New feature "Importance ws/assets"
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1869-add-default-and-grouped-subtabs-in-reports-template-selection">
+    1869. ADD default and grouped subtabs in report's template selection.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1870-fixes-duplicate-component">
+    1870. Fixes Duplicate component.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1871-fix-references-and-policy-details-block">
+    1871 Fix references and policy details block
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1872-fix-crash-in-custom-template-selection-in-reports-view">
+    1872. Fix crash in custom template selection in report's view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1875-fix-validation-of-web-vulns-creation">
+    1875. Fix validation of web vulns creation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1877-risk-is-allowed-for-faraday-corp-cloud-licenes">
+    1877. Risk is allowed for faraday-corp-cloud licenes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1879-fix-columns-order-in-manage">
+    1879. Fix columns order in manage.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1880-fixes-staging-issues">
+    1880. Fixes staging issues
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1882-new-command-history-update-fix">
+    1882 New command history update fix.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1884-fix-custom-grouped-reports">
+    1884. Fix custom grouped reports.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1890-add-anchor-to-references-in-exploitable-and-patchable-tags">
+    1890. Add anchor to references in exploitable and patchable tags.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1892-fixes-choice-field-in-custom-attributes">
+    1892. Fixes choice field in custom attributes.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1894-fixes-references-context-menu-field">
+    1894 Fixes references context menu field
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1898-fixes-empty-refs">
+    1898 Fixes empty refs
+  </a>
+<nav aria-label="1898 Fixes empty refs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1024-september-7th-2022">
+    1.0.24 [September 7th, 2022]:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1667-ui-kit-add-typographic-styles">
+    1667 Ui kit. Add typographic styles.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1670-ui-kit-add-select-component">
+    1670 Ui kit. Add select component.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-vulns-by-severity-in-dashboard-doesnt-work-properly">
+    1743 Fixes vulns by severity in Dashboard doesnt work properly.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-most-vulnerable-assets-in-dashboard-doesnt-work-properly">
+    1743 Fixes most vulnerable assets in Dashboard doesnt work properly.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-improve-styling">
+    1743 Improve styling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-latest-all-vulns-doesnt-work-properly">
+    1743 Fixes latest all vulns doesnt work properly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1771-swagger-api-implementation">
+    1771 Swagger api implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1772-dashboard-typos-fix">
+    1772 Dashboard Typos fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1775-change-width-of-name-column-on-hostdetails-table">
+    1775 Change width of name column on hostDetail's table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1778-add-web-vulns-fields-in-vuln-creation-and-vuln-detail">
+    1778. Add web vulns fields in vuln creation and vuln detail.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1780-replace-issuetracker_json-field-for-issuetracker">
+    1780 Replace issuetracker_json field for issuetracker
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1795-risk-information-and-cve-fields-added-to-vulndetail">
+    1795 Risk information and cve fields added to vulnDetail
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1796-add-shell-icon-in-activity-feed-card-and-fix-overflow-in-the-title-of-ws-in-grid-view">
+    1796. Add shell icon in activity feed card. And fix overflow in the title of ws in grid view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1820-fix-removed-searchbar-and-actionbar-when-entering-data-on-an-empty-ws-via-faraday-cli-and-reset-filters-when-switching-workspaces">
+    1820. Fix removed searchbar and actionbar when entering data on an empty ws via faraday cli. And reset filters when switching workspaces.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1821-apply-template-reference-fix">
+    1821 apply template reference fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1825-confirmed-flag-error-fix">
+    1825 Confirmed flag error fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1836-pre-release-corrections">
+    1836 pre release corrections
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1015-adds-new-searchbarfiltering-function-in-vuln-templates-knowledge-base">
+    1015 Adds new searchbar/filtering function in Vuln Templates (Knowledge Base)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1296-adds-port-validation-when-creating-a-service">
+    1296 Adds port validation when creating a service
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1338-restricts-send-to-tool-when-user-is-not-admin">
+    1338 Restricts send to tool when user is not admin
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1457-add-ids-in-ws-creation-modal">
+    1457 Add ids in ws creation modal.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1459-adds-error-description-when-creating-pipeline-or-job-with-existing-name">
+    1459 Adds error description when creating pipeline or job with existing name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1460-changes-in-users-view-add-search-bar-add-users-table-default-order-and-order-by-roles-column-refactor-users-component">
+    1460 Changes in users view, add search bar, add users table default order and order by roles column. Refactor users component.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1473-changes-name-validation-error-on-workspace-creation-and-modifies-style">
+    1473 Changes name validation error on workspace creation and modifies style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1512-removes-double-click-on-workspaces-table-added-selection-of-active-ws-to-name-on-both-grid-and-list-view-set-grid-view-as-default">
+    1512 Removes double click on workspaces table, added selection of active ws to name on both grid and list view, set grid view as default.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1521-add-ids-in-workspaces-dropdown">
+    1521 Add ids in workspaces dropdown.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1535-add-current-username-and-proptypes">
+    1535 Add current username and proptypes.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1541-change-mac-address-input-and-add-validation">
+    1541 Change mac address input and add validation.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1545-reset-filters-state-when-unmounting-reports-view">
+    1545 Reset filters state when unmounting reports view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1592-fixing-some-minor-issues-in-analtycs">
+    1592 Fixing some minor issues in analtycs.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1595-new-kb-vulneravility-feature-bulk-update-and-apply-template">
+    1595 New KB vulneravility feature (bulk update and apply template)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1610-fix-bug-when-user-is-deleted-and-open-creation-modal-the-data-of-the-previous-user-remains-in-the-modal">
+    1610 fix bug when user is deleted and open creation modal the data of the previous user remains in the modal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1611-fixes-asset-and-client-roles-permission">
+    1611 Fixes asset and client roles permission
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1614-fix-rol-permissions-in-agents-and-scheduler">
+    1614 Fix rol permissions in agents and scheduler.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1615-fix-rol-client-permissions-in-reports">
+    1615 fix rol client permissions in reports
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1625-add-new-activity-feed-design">
+    1625 add new activity feed design
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1630-add-agents-submenu-in-the-sidebar-of-community-and-add-proptypes">
+    1630 add agents submenu in the sidebar of community and add proptypes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1635-fix-bug-get-tags-list-when-loading-manage-view">
+    1635 Fix bug get tags list when loading manage view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1638-fix-width-of-dropdowns-in-ticketing-tools">
+    1638 Fix width of dropdowns in ticketing tools.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1648-removing-bootstrap-dependency-and-adding-bootstrap-style">
+    1648 Removing bootstrap dependency and adding bootstrap style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1655-changes-solarwinds-web-help-desk-icon">
+    1655 Changes SolarWinds Web Help Desk icon
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1656-changed-comment-tab-displaying-behaviour-on-planner-added-comment-button">
+    1656 Changed comment tab displaying behaviour on planner. Added comment button.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1666-added-colors-to-ui-kit">
+    1666 Added colors to UI kit
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1667-ui-kit-add-typographic-styles_1">
+    1667 Ui kit. Add typographic styles.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1670-ui-kit-add-select-component_1">
+    1670 Ui kit. Add select component.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1681-add-redirect-when-a-hosts-comment-is-clicked">
+    1681 Add redirect when a host's comment is clicked.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1686-close-user-feedback-when-clicking-done-button">
+    1686 Close user feedback when clicking done button.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1688-change-vulns-by-status-graph-and-library-in-feed-1688">
+    1688 Change vulns by status graph and library in feed. 1688.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1695-hide-edit-icon-in-reports-when-user-is-client-and-fix-text-of-createedit-button-1688">
+    1695 Hide edit icon in reports when user is client and fix text of create/edit button. 1688.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1696-adds-new-tour-sections-fix-tour-bug-in-activity-dashboards-item-in-sidebar">
+    1696 Adds new tour sections. Fix tour bug in activity dashboard's item in sidebar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1698-remove-fields-from-fields-dropdown-of-tasks-that-are-not-allowed">
+    1698 Remove fields from fields dropdown of tasks that are not allowed.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1707-fixes-bug-when-removing-workspaces-not-refreshing-the-table-properly">
+    1707 Fixes bug when removing workspaces not refreshing the table properly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1709-fix-agents-tools-modal-and-add-repo_name-in-yaml">
+    1709 Fix agents tools modal and add repo_name in yaml.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1710-fix-save-job-issue">
+    1710 Fix save job issue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1712-fixes-bug-of-app-crashing-due-to-eslint-changes-on-exhaustive-deps">
+    1712 Fixes bug of app crashing due to ESLint changes on exhaustive deps.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1713-adds-date-filtering-on-vulns">
+    1713 Adds date filtering on vulns
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1717-fixes-style-issues-in-the-gant-and-split-view-of-planner">
+    1717 Fixes style issues in the gant and split view of planner.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1721-fix-edit-ws-in-scheduler">
+    1721 Fix edit ws in scheduler.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1724-fixes-several-minor-issues-in-analytics">
+    1724 Fixes several minor issues in Analytics.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1726-add-external-id-and-tool-fields-in-jobs">
+    1726 Add external id and tool fields in jobs.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1739-adds-ldap-feature-validation-on-users">
+    1739 Adds LDAP feature validation on users
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1741-secret-keys-hidden">
+    1741 Secret keys hidden
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-vulns-by-severity-in-dashboard-doesnt-work-properly_1">
+    1743 Fixes vulns by severity in Dashboard doesnt work properly.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-most-vulnerable-assets-in-dashboard-doesnt-work-properly_1">
+    1743 Fixes most vulnerable assets in Dashboard doesnt work properly.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-improve-styling_1">
+    1743 Improve styling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1743-fixes-latest-all-vulns-doesnt-work-properly_1">
+    1743 Fixes latest all vulns doesnt work properly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1745-the-behaviour-related-to-table-and-states-is-setted-to-be-the-same-in-several-pages">
+    1745 The behaviour related to table and states is setted to be the same in several pages.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1747-adds-api-version-fetching-before-login">
+    1747 Adds api version fetching before login
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1749-fixes-bug-when-fetching-first-scan-command-id">
+    1749 Fixes bug when fetching first scan command id
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1750-fix-crash-when-creating-a-report">
+    1750 Fix crash when creating a report.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1752-fixes-bug-of-several-fields-on-manual-vuln-creation-being-cleared-when-switching-between-tabs-and-fixed-performance-issues-when-typing">
+    1752 Fixes bug of several fields on Manual Vuln Creation being cleared when switching between tabs, and fixed performance issues when typing.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1755-adds-title-on-scheduler-view-and-moved-add-schedule-button-to-the-right-of-the-actionbar">
+    1755 Adds title on Scheduler view and moved 'Add Schedule' button to the right of the actionbar"
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1756-adds-ignore-informational-vulnerabilities-and-resolve-hostnames-flags-on-agent-execution">
+    1756 Adds 'Ignore informational vulnerabilities' and 'Resolve hostnames' flags on agent execution
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1757-fixes-confirmedclosed-dropdown-selector-on-dashboard-overlapping-counts">
+    1757 Fixes confirmed/closed dropdown selector on dashboard overlapping counts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1758-fixes-bug-of-label-overflowing-from-vuln-template-dropdown-selector-when-applying-a-vuln-template">
+    1758 Fixes bug of label overflowing from vuln template dropdown selector when applying a vuln template
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1759-sets-height-limit-to-apply-vuln-template-modal">
+    1759 Sets height limit to 'apply vuln template' modal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1768-fix-colors-in-status-dropdown-of-vulnerability-detail-1768">
+    1768 Fix colors in status dropdown of vulnerability detail. 1768.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1769-adds-autotagging-feature-when-importing-vulns">
+    1769 Adds autotagging feature when importing vulns
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1771-swagger-api-implementation_1">
+    1771 Swagger api implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1772-dashboard-typos-fix_1">
+    1772 Dashboard Typos fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1775-change-width-of-name-column-on-hostdetails-table_1">
+    1775 Change width of name column on hostDetail's table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1778-add-web-vulns-fields-in-vuln-creation-and-vuln-detail_1">
+    1778. Add web vulns fields in vuln creation and vuln detail.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1779-add-field-scope-in-ws-creation-1779">
+    1779 Add field scope in ws creation. 1779.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1780-replace-issuetracker_json-field-for-issuetracker_1">
+    1780 Replace issuetracker_json field for issuetracker
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1783-add-portals-request-in-community-for-metrics-1783">
+    1783 Add portal's request in community for metrics. 1783.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1785-removes-several-warnings-on-debugger-console">
+    1785 Removes several warnings on debugger console.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1786-fix-references-1786">
+    1786 Fix references. 1786.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1787-adds-new-scrollable-feature-to-vulnerability-detail">
+    1787 Adds new scrollable feature to vulnerability detail
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1789-fixes-a-bug-of-not-displaying-actionbar-on-workspace-view-and-refactored-code">
+    1789 Fixes a bug of not displaying actionbar on workspace view and refactored code.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1790-fixes-double-requests-when-opening-vuln-detail">
+    1790 Fixes double requests when opening vuln detail
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1795-risk-information-and-cve-fields-added-to-vulndetail_1">
+    1795 Risk information and cve fields added to vulnDetail
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1796-add-shell-icon-in-activity-feed-card-and-fix-overflow-in-the-title-of-ws-in-grid-view_1">
+    1796. Add shell icon in activity feed card. And fix overflow in the title of ws in grid view.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1798-changes-vulns-import-modal-style-adds-error-status-validation">
+    1798 Changes vulns import modal style, adds 'Error' status validation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1800-fixes-bug-of-not-being-able-to-save-editions-on-workspaces">
+    1800 Fixes bug of not being able to save editions on workspaces
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1802-fixes-bug-of-markdown-editor-not-showing-content-when-disabled">
+    1802 Fixes bug of Markdown editor not showing content when disabled
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1808-added-refresh-button-to-manage">
+    1808 Added refresh button to manage.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1812-adds-evidence-preview-and-modified-image-preview-styles">
+    1812 Adds evidence preview and modified image preview styles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1820-fix-removed-searchbar-and-actionbar-when-entering-data-on-an-empty-ws-via-faraday-cli-and-reset-filters-when-switching-workspaces_1">
+    1820. Fix removed searchbar and actionbar when entering data on an empty ws via faraday cli. And reset filters when switching workspaces.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1821-apply-template-reference-fix_1">
+    1821 apply template reference fix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1823-fixes-bug-when-adding-tags-on-file-import-without-vulns-uploaded">
+    1823 Fixes bug when adding tags on file import without vulns uploaded.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1824-fixes-vuln-detail-width">
+    1824 Fixes vuln detail width.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1825-confirmed-flag-error-fix_1">
+    1825 Confirmed flag error fix
+  </a>
+<nav aria-label="1825 Confirmed flag error fix" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1023-july-28th-2022">
+    1.0.23 [July 28th, 2022]:
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1805-resolver-conflictos-entre-rama-communityprofessional">
+    1805 - Resolver conflictos entre rama community/professional
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1515-fixes-login-style">
+    1515 Fixes login style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1540-adds-validation-to-saml-and-ldap-users-on-creation-modal">
+    1540 Adds validation to saml and ldap users on creation modal
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1624-added-new-dashboard-filters">
+    1624 Added new Dashboard filters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1639-add-asterisks-in-service-modal">
+    1639 Add asterisks in service modal.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1649-removing-unused-libraries">
+    1649 Removing unused libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1661-replace-markdown-component-in-manual-vuln-creation-with-new-one">
+    1661 Replace markdown component in manual vuln creation with new one.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1662-adds-new-cloud-agents-feature-and-changes-agent-logic-now-workspace-selection-is-an-execution-param-instead-of-a-creation-param">
+    1662 Adds new Cloud Agents feature and changes agent logic, now workspace selection is an execution param instead of a creation param.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1664-sets-version-132-of-react-markdown-editor-lite">
+    1664 Sets version 1.3.2 of react-markdown-editor-lite
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1674-ui-kit-add-textfield-component-1674">
+    1674 UI kit. Add textfield component. 1674.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1675-ui-kit-add-new-textarea-component-1675">
+    1675 Ui Kit. Add new textarea component (1675)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1690-add-create-date-and-owner-order-remove-unused-vendor-column-in-assets">
+    1690 Add create date and owner order. Remove unused vendor column in assets.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1693-fix-filter-bugs">
+    1693 Fix filter bugs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1697-reset-order-by-and-fix-group-by-issue">
+    1697 Reset order by and fix group by issue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1699-fixes-bug-when-filtering-on-workspace-modified-searchbar-style-to-make-it-consistent">
+    1699 Fixes bug when filtering on workspace, modified searchbar style to make it consistent
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1715-fixes-crash-when-entering-to-kb-view-and-trying-to-get-vuln-templates">
+    1715 Fixes crash when entering to KB view and trying to get vuln templates.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1719-fix-bug-when-opening-host-detail">
+    1719 Fix bug when opening host detail.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1720-fix-assets-typos">
+    1720 Fix assets typos.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1723-adds-feature-flag-validation-on-pro-features">
+    1723 Adds feature flag validation on pro features.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1725-add-fields-tool-and-external_id-in-search-bar">
+    1725 Add fields tool and external_id in search bar.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1728-vulns-by-assets-sorted-from-critical-to-low-by-default">
+    1728 Vulns by assets sorted from critical to low by default
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1730-fixes-input-exports-to-make-it-consistent-between-branches-enabling-checkout-without-errors">
+    1730 Fixes Input exports to make it consistent between branches, enabling checkout without errors
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1732-removes-mock-user-and-executive-report-vieww">
+    1732 Removes mock user and executive report vieww
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1735-adds-new-readme-and-removes-tracking">
+    1735 Adds new readme and removes tracking.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1742-fixes-autofill-bug-when-login-in">
+    1742 Fixes autofill bug when login in
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1746-fixes-dropdown-position-on-vuln-creation">
+    1746 Fixes dropdown position on vuln creation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1754-adds-title-on-agents-view-and-moved-add-agent-button-to-the-right-of-the-actionbar">
+    1754 Adds title on Agents view and moved 'Add Agent' button to the right of the actionbar
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1788-fixes-conflicts-between-comm-and-prof-branches">
+    1788 Fixes conflicts between comm and prof branches
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1805-resolver-conflictos-entre-rama-communityprofessional_1">
+    1805 - Resolver conflictos entre rama community/professional
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="1033-jun-1st-2023">1.0.33 [Jun 1<sup>st</sup>, 2023]:<a class="headerlink" href="#1033-jun-1st-2023" title="Permanent link">¶</a></h2>
+<ul>
+<li>[ADD] Add asterisks to required fields in tool's config. #2052</li>
+<li>[FIX] Show error response when uploading a custom template with error twice. #2049</li>
+</ul>
+<h2 id="1032-may-29th-2023">1.0.32 [May 29<sup>th</sup>, 2023]:<a class="headerlink" href="#1032-may-29th-2023" title="Permanent link">¶</a></h2>
+<ul>
+<li>[ADD] Add issue trackers section in vulnerability detail. #2007</li>
+<li>[ADD] Add table selection in ServiceNow configuration. #2009</li>
+<li>[ADD] Upload custom template in reports. #2011</li>
+<li>[ADD] Implement alphabetical sorting for array elements. #2025</li>
+<li>[ADD] Add "Last Modified" column to workspace list view with sorting functionality. #2028</li>
+<li>[MOD] Change no found vulnerabilities message in reports and add asterisks in required fields of reports. #1859</li>
+<li>[MOD] Fetch agents tools info from <code>/get_manifests</code> API and change the required fields validation. #1872</li>
+<li>[MOD] Change endpoint of assets counts and add warning of assets limit reached when importing. #2016</li>
+<li>[MOD] Change CVE and Tags operators in searchbar: '=' to 'is one of' and '!=' to 'is not one of'. #2013</li>
+<li>[FIX] Remove need to return to access the templates from jira config. #1976</li>
+<li>[FIX] Update regex for workspace authentication and authorization. #2000</li>
+<li>[FIX] Change description and resolution field height in manual vulnerability creation. #2014</li>
+<li>[FIX] Correct use of the PATCH method in Workspace edit #2017</li>
+<li>[FIX] Remove duplicate fetch to filter's API in manage. #2020</li>
+<li>[FIX] Update searchbar operators for Tag and CVE fields, using "is one of" for "=" and "is not one of" for "!=". #2024</li>
+<li>[FIX] Auto-save and apply date on selection in search bar. #2026</li>
+<li>[FIX] Remove unnecessary requests to <code>global_hosts</code> API in manage view. #2036</li>
+<li>[DEL] Remove unnecessary PATCH in send vulnerabilities to GitLab, ServiceNow and SolarWinds. #1949</li>
+</ul>
+<h2 id="1031-apr-3rd-2023">1.0.31 [Apr 3<sup>rd</sup>, 2023]:<a class="headerlink" href="#1031-apr-3rd-2023" title="Permanent link">¶</a></h2>
+<ul>
+<li>[ADD] Add cve to manual creation #1850</li>
+<li>[FIX] Show server error when vulns update throws error. #1874</li>
+<li>[FIX] patch in users edition. #1899</li>
+<li>[FIX] fix text of button in assets edition. #1907</li>
+<li>[FIX] fixes in custom attribute of type choice. #1930</li>
+<li>[ADD] allow adding evidence in description field of the vulnerabilty detail. #1934</li>
+<li>[FIX] hide add template button for users role client and asset owner in knowledge base view. #1941</li>
+<li>[ADD] modal warning when duplicate button is clicked and there arent multiple vulns selected. #1957</li>
+<li>[ADD] implement tags in assets. #1960</li>
+<li>[FIX] bug when adding custom attibutes with uppercase to table. #1967</li>
+<li>[FIX] Importace workspace patch fix #1968</li>
+<li>[ADD] CVSS field and calculator in vulnerability detail. #1973</li>
+<li>[FIX] reset page number when switching workspaces in manage and assets views. #1974</li>
+<li>[MOD] Add custom attibutes to settings #1977</li>
+<li>[FIX] sorting by vulnerabilities column in workspaces view. #1978</li>
+<li>[MOD] check permissions by role in send vulns button to show it to pentesters users and allow them to send vulns to tools. #1979</li>
+<li>[ADD] services version filter in searchbar. #1981</li>
+<li>[FIX] Fix service filter #1982</li>
+<li>[FIX] long columns name in edit column modal and align help icon. #1983</li>
+<li>[FIX] new password label in account's setting. #1985</li>
+<li>[FIX] remove overflow of success box in user feedbback. #1986</li>
+<li>[FIX] Change behaviour of workspace's name field when showing error message in workspace creation. #1997</li>
+<li>[FIX] crash in save vulnerability as template when reference's name is empty. #1999</li>
+<li>[MOD] Disable sort by in vulnerabilites column of workspaces. #2012</li>
+<li>[FIX] crash in import vulns modal. #2015</li>
+</ul>
+<h2 id="1030-feb-9th-2023">1.0.30 [Feb 9<sup>th</sup>, 2023]:<a class="headerlink" href="#1030-feb-9th-2023" title="Permanent link">¶</a></h2>
+<ul>
+<li>[FIX] policy violation typo. #1469</li>
+<li>[ADD] warning modal when user clicks status toggle button. #1654</li>
+<li>[ADD] pagination component and confirm action in vulnerabilities tab of asset's detail. #1733</li>
+<li>[FIX] notify user when manual creation of a vulnerability failed and fix reload table when creating the first vulnerability. #1809</li>
+<li>[FIX] order by in colums of workspaces. #1920</li>
+<li>[FIX] remove hostname from asset. #1940.</li>
+<li>[FIX] delete unnecessary calls to knowledge base #1951</li>
+<li>[ADD] Allow add/remove tags from vulns when selecting all vulns with filters. #1953</li>
+<li>[FIX] remove duplicate importance when grouping. #1954.</li>
+<li>[FIX] Fix bug bundle #1955</li>
+<li>[ADD] bulk delete kb. #1958</li>
+<li>[FIX] Add tags after reload #1959</li>
+<li>[FIX] crash when editing a workspace with removed users and fix workspace selected bug when entering workspaces view. #1961</li>
+<li>[ADD] Update Date filter in searchbar. #1963</li>
+<li>[ADD] Update Date filter in jobs. #1964</li>
+<li>[FIX] Jira modal reload fix #1965</li>
+<li>[FIX] vulns count in average risk graph. #1966</li>
+<li>[FIX] width of vulnerability detail in resolutions higher than 3000x1080. #1972</li>
+<li>[ADD] Implement cancel report creation. #1975</li>
+</ul>
+<h2 id="1029-jan-3rd-2023">1.0.29 [Jan 3<sup>rd</sup>, 2023]:<a class="headerlink" href="#1029-jan-3rd-2023" title="Permanent link">¶</a></h2>
+<ul>
+<li>[FIX] bug in columns width of manage when grouping. #1806.</li>
+<li>[ADD] download button in evidences. #1815.</li>
+<li>
+<h1 id="1851-implement-bulk-delete-on-hostassets">1851 Implement bulk delete on host/assets<a class="headerlink" href="#1851-implement-bulk-delete-on-hostassets" title="Permanent link">¶</a></h1>
+</li>
+<li>[FIX] get users list in modal of workspace creation. #1852.</li>
+<li>[FIX] bug in open edit asset when edit icon is clicked. #1908.</li>
+<li>[MOD] input search component so that it can be reusable in analytics.</li>
+<li>[FIX] bug in input search component when assigning users/tasks/templates and [ADD] keyboard navigation. #1922.</li>
+<li>Fix overflow in modal of workspace creation. #1931.</li>
+<li>Fix empty user list in modal of workspace creation. #1932.</li>
+<li>
+<h1 id="1945-fix-select-all-issues">1945  Fix select all issues<a class="headerlink" href="#1945-fix-select-all-issues" title="Permanent link">¶</a></h1>
+</li>
+<li>Replace values in average risk score graph with data from endpoint. #1950.</li>
+</ul>
+<h2 id="1028-dic-14th-2022">1.0.28 [Dic 14<sup>th</sup>, 2022]:<a class="headerlink" href="#1028-dic-14th-2022" title="Permanent link">¶</a></h2>
+<ul>
+<li>Fix error message in tags. #1840</li>
+<li>
+<h1 id="1904-fix-delete-button-loading-state">1904 Fix delete button loading state<a class="headerlink" href="#1904-fix-delete-button-loading-state" title="Permanent link">¶</a></h1>
+</li>
+<li>Fix upload with multiple reports. #1929.</li>
+<li>
+<h1 id="1939-fix-select-all-label">1939 fix select all label<a class="headerlink" href="#1939-fix-select-all-label" title="Permanent link">¶</a></h1>
+</li>
+<li>Refactor risk graphs in dashboard. #1942</li>
+<li>
+<h1 id="1943-automatic-version-update">1943 Automatic version update<a class="headerlink" href="#1943-automatic-version-update" title="Permanent link">¶</a></h1>
+</li>
+<li>Fix edit order column in assets. #1944.</li>
+<li>Fix risk score average and add limit param in enpoint of filters.</li>
+<li>Fix creation of grouped and docx reports. #1947.</li>
+</ul>
+<h2 id="1027-dec-1st-2022">1.0.27 [Dec 1<sup>st</sup>, 2022]:<a class="headerlink" href="#1027-dec-1st-2022" title="Permanent link">¶</a></h2>
+<ul>
+<li>UI kit. Add labels components. 1672</li>
+<li>UI Kit. Add checkbox, radio button and switch components. 1673.</li>
+<li>
+<h1 id="1811-new-custom-attributes-feature-for-apply-templates">1811. New custom attributes feature for Apply Templates.<a class="headerlink" href="#1811-new-custom-attributes-feature-for-apply-templates" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1822-refactor-actionbar">1822. Refactor ActionBar.<a class="headerlink" href="#1822-refactor-actionbar" title="Permanent link">¶</a></h1>
+</li>
+<li>[ADD] custom logo in reports. #1841.</li>
+<li>
+<h1 id="1843-remove-redundant-filter-on-dashboard">1843 Remove redundant filter on dashboard<a class="headerlink" href="#1843-remove-redundant-filter-on-dashboard" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1854-refactor-actionbar-component-in-manage">1854. Refactor ActionBar component in Manage.<a class="headerlink" href="#1854-refactor-actionbar-component-in-manage" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1855-refactor-actionbar-component-in-kb">1855. Refactor ActionBar component in KB.<a class="headerlink" href="#1855-refactor-actionbar-component-in-kb" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1856-refactor-actionbar-component-in-assets">1856. Refactor ActionBar component in Assets.<a class="headerlink" href="#1856-refactor-actionbar-component-in-assets" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1857-refactor-actionbar-component-in-users">1857. Refactor ActionBar component in Users.<a class="headerlink" href="#1857-refactor-actionbar-component-in-users" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1865-change-reports-names">1865 Change reports names<a class="headerlink" href="#1865-change-reports-names" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1883-fixes-in-the-style-of-copy-icon-in-command-history">1883. Fixes in the style of copy icon in command history.<a class="headerlink" href="#1883-fixes-in-the-style-of-copy-icon-in-command-history" title="Permanent link">¶</a></h1>
+</li>
+<li>[FIX] width of importance button in assets. #1886.</li>
+<li>
+<h1 id="1888-fix-lowercase-cve">1888 Fix lowercase cve<a class="headerlink" href="#1888-fix-lowercase-cve" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1891-select-all-implementation">1891 Select all implementation<a class="headerlink" href="#1891-select-all-implementation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1895-changes-names-to-asset">1895 Changes names to asset<a class="headerlink" href="#1895-changes-names-to-asset" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1896-fix-save-job-as-new-when-has-the-same-name">1896. Fix save job as new when has the same name.<a class="headerlink" href="#1896-fix-save-job-as-new-when-has-the-same-name" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1897-fix-run-icon-of-pipeline-when-is-disabled">1897. Fix run icon of pipeline when is disabled.<a class="headerlink" href="#1897-fix-run-icon-of-pipeline-when-is-disabled" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1906-fix-delete-message-in-jobs">1906. Fix delete message in jobs.<a class="headerlink" href="#1906-fix-delete-message-in-jobs" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1916-fix-asset-name-change">1916 Fix asset name change<a class="headerlink" href="#1916-fix-asset-name-change" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1917-fix-jobs-issues">1917 Fix Jobs issues<a class="headerlink" href="#1917-fix-jobs-issues" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1918-formas-cve-and-risk-score">1918 Formas cve and risk score<a class="headerlink" href="#1918-formas-cve-and-risk-score" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1919-fix-analytics-dashboard-issues">1919 Fix analytics dashboard issues<a class="headerlink" href="#1919-fix-analytics-dashboard-issues" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1923-fix-description-and-resolution-fields-on-manual-kb-creation">1923 Fix description and resolution fields on manual kb creation<a class="headerlink" href="#1923-fix-description-and-resolution-fields-on-manual-kb-creation" title="Permanent link">¶</a></h1>
+</li>
+<li>[ADD] risk graphs in dashboard. #1825. </li>
+<li>
+<h1 id="1926-comments-truncate">1926 Comments truncate<a class="headerlink" href="#1926-comments-truncate" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1927-column-asset-fix">1927 Column Asset fix<a class="headerlink" href="#1927-column-asset-fix" title="Permanent link">¶</a></h1>
+</li>
+<li>[FIX] show edit buttons when vulnerability detail is open. #1928.</li>
+<li>
+<h1 id="1933-fix-scope-field-in-ws-creation">1933 Fix scope field in ws creation<a class="headerlink" href="#1933-fix-scope-field-in-ws-creation" title="Permanent link">¶</a></h1>
+</li>
+<li>[FIX] bulk delete when select all vulns and is filtered. #1937</li>
+</ul>
+<h2 id="1026">1.0.26:<a class="headerlink" href="#1026" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<h1 id="1507-change-commands-endpoint-to-global_commandsid-and-remove-ws">1507. Change commands endpoint to global_commands/id and remove ws.<a class="headerlink" href="#1507-change-commands-endpoint-to-global_commandsid-and-remove-ws" title="Permanent link">¶</a></h1>
+</li>
+<li>Add new view of selection templates in reports.</li>
+<li>
+<p>Some improves in dashboard</p>
+</li>
+<li>
+<p>Adding tabs in dashboard for feeds and command history</p>
+</li>
+<li>New command history section.</li>
+<li>
+<h1 id="1810-add-custom-attributes-tab-in-kb-manual-creation">1810. Add custom attributes tab in kb manual creation.<a class="headerlink" href="#1810-add-custom-attributes-tab-in-kb-manual-creation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1813-add-role-permissions-in-agents-endpoint-in-login">1813. Add role permissions in /agents endpoint in login.<a class="headerlink" href="#1813-add-role-permissions-in-agents-endpoint-in-login" title="Permanent link">¶</a></h1>
+</li>
+<li>Fixes bug of template's custom attributes not showing when performing a manual vuln creation</li>
+<li>New refresh button in Assets.</li>
+<li>New refresh button in Kb.</li>
+<li>
+<h1 id="1827-add-cve-filter-in-searchbar">1827. ADD CVE filter in searchbar.<a class="headerlink" href="#1827-add-cve-filter-in-searchbar" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1828-workspaces-in-grid-view-sorted-by-critical-vulns-count">1828. Workspaces in grid view sorted by critical vulns count.<a class="headerlink" href="#1828-workspaces-in-grid-view-sorted-by-critical-vulns-count" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1829-change-the-default-order-by-important-vulnerabilities-in-the-assets-view">1829. Change the default order by important vulnerabilities in the assets view.<a class="headerlink" href="#1829-change-the-default-order-by-important-vulnerabilities-in-the-assets-view" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1831-fix-width-of-notifications-count">1831. Fix width of notification's count.<a class="headerlink" href="#1831-fix-width-of-notifications-count" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1833-remove-ws-selector-in-swagger-view">1833. Remove ws selector in swagger view.<a class="headerlink" href="#1833-remove-ws-selector-in-swagger-view" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1834-change-documentation-link-in-import-modal-of-kb">1834. Change documentation link in import modal of kb.<a class="headerlink" href="#1834-change-documentation-link-in-import-modal-of-kb" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1835-fix-upgrade-license-modal-in-ws-creation">1835. Fix upgrade license modal in ws creation.<a class="headerlink" href="#1835-fix-upgrade-license-modal-in-ws-creation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1837-fixes-owner-roles-permissions">1837. Fixes owner roles permissions<a class="headerlink" href="#1837-fixes-owner-roles-permissions" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1839-correcciones-campos-enrichment">1839 correcciones campos enrichment<a class="headerlink" href="#1839-correcciones-campos-enrichment" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1844-fix-list-components-width-of-custom-attributes-in-vuln-creation-and-template-creation">1844. Fix list component's width of custom attributes in vuln creation and template creation.<a class="headerlink" href="#1844-fix-list-components-width-of-custom-attributes-in-vuln-creation-and-template-creation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1848-fix-manual-vuln-creation-bugs">1848 Fix manual vuln creation bugs<a class="headerlink" href="#1848-fix-manual-vuln-creation-bugs" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1849-added-risk-and-important-fields-to-table-manage-host-ws">1849 Added risk and important fields to table (manage, host, ws)<a class="headerlink" href="#1849-added-risk-and-important-fields-to-table-manage-host-ws" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1853-enabling-delete-button-in-the-action-bar-also-adding-warning-modal-and-confirmation-modal-in-workspace-section">1853. Enabling delete button in the action bar, also adding warning modal and confirmation modal in workspace section.<a class="headerlink" href="#1853-enabling-delete-button-in-the-action-bar-also-adding-warning-modal-and-confirmation-modal-in-workspace-section" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1858-fixes-upgrade-plan-texts">1858. Fixes upgrade plan texts.<a class="headerlink" href="#1858-fixes-upgrade-plan-texts" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1861-add-cvss2-cvss3-and-risk-score-filters-in-searchbar">1861. ADD cvss2, cvss3 and risk score filters in searchbar.<a class="headerlink" href="#1861-add-cvss2-cvss3-and-risk-score-filters-in-searchbar" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1862-change-tags-button-in-vulnerability-detail">1862. Change tags button in vulnerability detail.<a class="headerlink" href="#1862-change-tags-button-in-vulnerability-detail" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1867-fixes-in-risk-and-vuln-detail-styles">1867. Fixes in risk and vuln detail styles.<a class="headerlink" href="#1867-fixes-in-risk-and-vuln-detail-styles" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1868-new-feature-importance-wsassets">1868. New feature "Importance ws/assets"<a class="headerlink" href="#1868-new-feature-importance-wsassets" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1869-add-default-and-grouped-subtabs-in-reports-template-selection">1869. ADD default and grouped subtabs in report's template selection.<a class="headerlink" href="#1869-add-default-and-grouped-subtabs-in-reports-template-selection" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1870-fixes-duplicate-component">1870. Fixes Duplicate component.<a class="headerlink" href="#1870-fixes-duplicate-component" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1871-fix-references-and-policy-details-block">1871 Fix references and policy details block<a class="headerlink" href="#1871-fix-references-and-policy-details-block" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1872-fix-crash-in-custom-template-selection-in-reports-view">1872. Fix crash in custom template selection in report's view.<a class="headerlink" href="#1872-fix-crash-in-custom-template-selection-in-reports-view" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1875-fix-validation-of-web-vulns-creation">1875. Fix validation of web vulns creation.<a class="headerlink" href="#1875-fix-validation-of-web-vulns-creation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1877-risk-is-allowed-for-faraday-corp-cloud-licenes">1877. Risk is allowed for faraday-corp-cloud licenes<a class="headerlink" href="#1877-risk-is-allowed-for-faraday-corp-cloud-licenes" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1879-fix-columns-order-in-manage">1879. Fix columns order in manage.<a class="headerlink" href="#1879-fix-columns-order-in-manage" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1880-fixes-staging-issues">1880. Fixes staging issues<a class="headerlink" href="#1880-fixes-staging-issues" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1882-new-command-history-update-fix">1882 New command history update fix.<a class="headerlink" href="#1882-new-command-history-update-fix" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1884-fix-custom-grouped-reports">1884. Fix custom grouped reports.<a class="headerlink" href="#1884-fix-custom-grouped-reports" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1890-add-anchor-to-references-in-exploitable-and-patchable-tags">1890. Add anchor to references in exploitable and patchable tags.<a class="headerlink" href="#1890-add-anchor-to-references-in-exploitable-and-patchable-tags" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1892-fixes-choice-field-in-custom-attributes">1892. Fixes choice field in custom attributes.<a class="headerlink" href="#1892-fixes-choice-field-in-custom-attributes" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1894-fixes-references-context-menu-field">1894 Fixes references context menu field<a class="headerlink" href="#1894-fixes-references-context-menu-field" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1898-fixes-empty-refs">1898 Fixes empty refs<a class="headerlink" href="#1898-fixes-empty-refs" title="Permanent link">¶</a></h1>
+</li>
+</ul>
+<h2 id="1024-september-7th-2022">1.0.24 [September 7<sup>th</sup>, 2022]:<a class="headerlink" href="#1024-september-7th-2022" title="Permanent link">¶</a></h2>
+<ul>
+<li>Adds new searchbar/filtering function in Vuln Templates (Knowledge Base)</li>
+<li>Adds port validation when creating a service</li>
+<li>Restricts send to tool when user is not admin</li>
+<li>Add ids in ws creation modal.</li>
+<li>Adds error description when creating pipeline or job with existing name</li>
+<li>Changes in users view, add search bar, add users table default order and order by roles column. Refactor users component.</li>
+<li>Changes name validation error on workspace creation and modifies style</li>
+<li>Removes double click on workspaces table, added selection of active ws to name on both grid and list view, set grid view as default.</li>
+<li>Add ids in workspaces dropdown.</li>
+<li>Add current username and proptypes.</li>
+<li>Change mac address input and add validation.</li>
+<li>Reset filters state when unmounting reports view.</li>
+<li>Fixing some minor issues in analtycs.</li>
+<li>New KB vulneravility feature (bulk update and apply template)</li>
+<li>fix bug when user is deleted and open creation modal the data of the previous user remains in the modal</li>
+<li>Fixes asset and client roles permission</li>
+<li>Fix rol permissions in agents and scheduler.</li>
+<li>fix rol client permissions in reports</li>
+<li>add new activity feed design</li>
+<li>add agents submenu in the sidebar of community and add proptypes</li>
+<li>Fix bug get tags list when loading manage view.</li>
+<li>Fix width of dropdowns in ticketing tools.</li>
+<li>Removing bootstrap dependency and adding bootstrap style</li>
+<li>Changes SolarWinds Web Help Desk icon</li>
+<li>Changed comment tab displaying behaviour on planner. Added comment button.</li>
+<li>Added colors to UI kit</li>
+<li>
+<h1 id="1667-ui-kit-add-typographic-styles">1667 Ui kit. Add typographic styles.<a class="headerlink" href="#1667-ui-kit-add-typographic-styles" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1670-ui-kit-add-select-component">1670 Ui kit. Add select component.<a class="headerlink" href="#1670-ui-kit-add-select-component" title="Permanent link">¶</a></h1>
+</li>
+<li>Add redirect when a host's comment is clicked.</li>
+<li>Close user feedback when clicking done button.</li>
+<li>Change vulns by status graph and library in feed. 1688.</li>
+<li>Hide edit icon in reports when user is client and fix text of create/edit button. 1688.</li>
+<li>Adds new tour sections. Fix tour bug in activity dashboard's item in sidebar.</li>
+<li>Remove fields from fields dropdown of tasks that are not allowed.</li>
+<li>Fixes bug when removing workspaces not refreshing the table properly</li>
+<li>Fix agents tools modal and add repo_name in yaml.</li>
+<li>Fix save job issue</li>
+<li>Fixes bug of app crashing due to ESLint changes on exhaustive deps.</li>
+<li>Adds date filtering on vulns</li>
+<li>Fixes style issues in the gant and split view of planner.</li>
+<li>Fix edit ws in scheduler.</li>
+<li>Fixes several minor issues in Analytics.</li>
+<li>Add external id and tool fields in jobs.</li>
+<li>Adds LDAP feature validation on users</li>
+<li>Secret keys hidden</li>
+<li>
+<h1 id="1743-fixes-vulns-by-severity-in-dashboard-doesnt-work-properly">1743 Fixes vulns by severity in Dashboard doesnt work properly.<a class="headerlink" href="#1743-fixes-vulns-by-severity-in-dashboard-doesnt-work-properly" title="Permanent link">¶</a></h1>
+</li>
+</ul>
+<h1 id="1743-fixes-most-vulnerable-assets-in-dashboard-doesnt-work-properly">1743 Fixes most vulnerable assets in Dashboard doesnt work properly.<a class="headerlink" href="#1743-fixes-most-vulnerable-assets-in-dashboard-doesnt-work-properly" title="Permanent link">¶</a></h1>
+<h1 id="1743-improve-styling">1743 Improve styling<a class="headerlink" href="#1743-improve-styling" title="Permanent link">¶</a></h1>
+<h1 id="1743-fixes-latest-all-vulns-doesnt-work-properly">1743 Fixes latest all vulns doesnt work properly<a class="headerlink" href="#1743-fixes-latest-all-vulns-doesnt-work-properly" title="Permanent link">¶</a></h1>
+<ul>
+<li>The behaviour related to table and states is setted to be the same in several pages.</li>
+<li>Adds api version fetching before login</li>
+<li>Fixes bug when fetching first scan command id</li>
+<li>Fix crash when creating a report.</li>
+<li>Fixes bug of several fields on Manual Vuln Creation being cleared when switching between tabs, and fixed performance issues when typing.</li>
+<li>Adds title on Scheduler view and moved 'Add Schedule' button to the right of the actionbar"</li>
+<li>Adds 'Ignore informational vulnerabilities' and 'Resolve hostnames' flags on agent execution</li>
+<li>Fixes confirmed/closed dropdown selector on dashboard overlapping counts</li>
+<li>Fixes bug of label overflowing from vuln template dropdown selector when applying a vuln template</li>
+<li>Sets height limit to 'apply vuln template' modal</li>
+<li>1766
+Expand and collapse buttons added to edit vulns.</li>
+<li>Fix colors in status dropdown of vulnerability detail. 1768.</li>
+<li>Adds autotagging feature when importing vulns</li>
+<li>
+<h1 id="1771-swagger-api-implementation">1771 Swagger api implementation<a class="headerlink" href="#1771-swagger-api-implementation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1772-dashboard-typos-fix">1772 Dashboard Typos fix<a class="headerlink" href="#1772-dashboard-typos-fix" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1775-change-width-of-name-column-on-hostdetails-table">1775 Change width of name column on hostDetail's table<a class="headerlink" href="#1775-change-width-of-name-column-on-hostdetails-table" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1778-add-web-vulns-fields-in-vuln-creation-and-vuln-detail">1778. Add web vulns fields in vuln creation and vuln detail.<a class="headerlink" href="#1778-add-web-vulns-fields-in-vuln-creation-and-vuln-detail" title="Permanent link">¶</a></h1>
+</li>
+<li>Add field scope in ws creation. 1779.</li>
+<li>
+<h1 id="1780-replace-issuetracker_json-field-for-issuetracker">1780 Replace issuetracker_json field for issuetracker<a class="headerlink" href="#1780-replace-issuetracker_json-field-for-issuetracker" title="Permanent link">¶</a></h1>
+</li>
+<li>Add portal's request in community for metrics. 1783.</li>
+<li>Removes several warnings on debugger console.</li>
+<li>Fix references. 1786.</li>
+<li>Adds new scrollable feature to vulnerability detail</li>
+<li>Fixes a bug of not displaying actionbar on workspace view and refactored code.</li>
+<li>Fixes double requests when opening vuln detail</li>
+<li>
+<h1 id="1795-risk-information-and-cve-fields-added-to-vulndetail">1795 Risk information and cve fields added to vulnDetail<a class="headerlink" href="#1795-risk-information-and-cve-fields-added-to-vulndetail" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1796-add-shell-icon-in-activity-feed-card-and-fix-overflow-in-the-title-of-ws-in-grid-view">1796. Add shell icon in activity feed card. And fix overflow in the title of ws in grid view.<a class="headerlink" href="#1796-add-shell-icon-in-activity-feed-card-and-fix-overflow-in-the-title-of-ws-in-grid-view" title="Permanent link">¶</a></h1>
+</li>
+<li>Changes vulns import modal style, adds 'Error' status validation</li>
+<li>Fixes bug of not being able to save editions on workspaces</li>
+<li>Fixes bug of Markdown editor not showing content when disabled</li>
+<li>Added refresh button to manage.</li>
+<li>Adds evidence preview and modified image preview styles</li>
+<li>
+<h1 id="1820-fix-removed-searchbar-and-actionbar-when-entering-data-on-an-empty-ws-via-faraday-cli-and-reset-filters-when-switching-workspaces">1820. Fix removed searchbar and actionbar when entering data on an empty ws via faraday cli. And reset filters when switching workspaces.<a class="headerlink" href="#1820-fix-removed-searchbar-and-actionbar-when-entering-data-on-an-empty-ws-via-faraday-cli-and-reset-filters-when-switching-workspaces" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1821-apply-template-reference-fix">1821 apply template reference fix<a class="headerlink" href="#1821-apply-template-reference-fix" title="Permanent link">¶</a></h1>
+</li>
+<li>Fixes bug when adding tags on file import without vulns uploaded.</li>
+<li>Fixes vuln detail width.</li>
+<li>
+<h1 id="1825-confirmed-flag-error-fix">1825 Confirmed flag error fix<a class="headerlink" href="#1825-confirmed-flag-error-fix" title="Permanent link">¶</a></h1>
+</li>
+<li>Updates package.json version to 1.0.24</li>
+<li>
+<h1 id="1836-pre-release-corrections">1836 pre release corrections<a class="headerlink" href="#1836-pre-release-corrections" title="Permanent link">¶</a></h1>
+</li>
+<li>1.0.24 [September 7<sup>th</sup>, 2022]:</li>
+</ul>
+<hr/>
+<ul>
+<li>
+<h1 id="1015-adds-new-searchbarfiltering-function-in-vuln-templates-knowledge-base">1015 Adds new searchbar/filtering function in Vuln Templates (Knowledge Base)<a class="headerlink" href="#1015-adds-new-searchbarfiltering-function-in-vuln-templates-knowledge-base" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1296-adds-port-validation-when-creating-a-service">1296 Adds port validation when creating a service<a class="headerlink" href="#1296-adds-port-validation-when-creating-a-service" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1338-restricts-send-to-tool-when-user-is-not-admin">1338 Restricts send to tool when user is not admin<a class="headerlink" href="#1338-restricts-send-to-tool-when-user-is-not-admin" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1457-add-ids-in-ws-creation-modal">1457 Add ids in ws creation modal.<a class="headerlink" href="#1457-add-ids-in-ws-creation-modal" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1459-adds-error-description-when-creating-pipeline-or-job-with-existing-name">1459 Adds error description when creating pipeline or job with existing name<a class="headerlink" href="#1459-adds-error-description-when-creating-pipeline-or-job-with-existing-name" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1460-changes-in-users-view-add-search-bar-add-users-table-default-order-and-order-by-roles-column-refactor-users-component">1460 Changes in users view, add search bar, add users table default order and order by roles column. Refactor users component.<a class="headerlink" href="#1460-changes-in-users-view-add-search-bar-add-users-table-default-order-and-order-by-roles-column-refactor-users-component" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1473-changes-name-validation-error-on-workspace-creation-and-modifies-style">1473 Changes name validation error on workspace creation and modifies style<a class="headerlink" href="#1473-changes-name-validation-error-on-workspace-creation-and-modifies-style" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1512-removes-double-click-on-workspaces-table-added-selection-of-active-ws-to-name-on-both-grid-and-list-view-set-grid-view-as-default">1512 Removes double click on workspaces table, added selection of active ws to name on both grid and list view, set grid view as default.<a class="headerlink" href="#1512-removes-double-click-on-workspaces-table-added-selection-of-active-ws-to-name-on-both-grid-and-list-view-set-grid-view-as-default" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1521-add-ids-in-workspaces-dropdown">1521 Add ids in workspaces dropdown.<a class="headerlink" href="#1521-add-ids-in-workspaces-dropdown" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1535-add-current-username-and-proptypes">1535 Add current username and proptypes.<a class="headerlink" href="#1535-add-current-username-and-proptypes" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1541-change-mac-address-input-and-add-validation">1541 Change mac address input and add validation.<a class="headerlink" href="#1541-change-mac-address-input-and-add-validation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1545-reset-filters-state-when-unmounting-reports-view">1545 Reset filters state when unmounting reports view.<a class="headerlink" href="#1545-reset-filters-state-when-unmounting-reports-view" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1592-fixing-some-minor-issues-in-analtycs">1592 Fixing some minor issues in analtycs.<a class="headerlink" href="#1592-fixing-some-minor-issues-in-analtycs" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1595-new-kb-vulneravility-feature-bulk-update-and-apply-template">1595 New KB vulneravility feature (bulk update and apply template)<a class="headerlink" href="#1595-new-kb-vulneravility-feature-bulk-update-and-apply-template" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1610-fix-bug-when-user-is-deleted-and-open-creation-modal-the-data-of-the-previous-user-remains-in-the-modal">1610 fix bug when user is deleted and open creation modal the data of the previous user remains in the modal<a class="headerlink" href="#1610-fix-bug-when-user-is-deleted-and-open-creation-modal-the-data-of-the-previous-user-remains-in-the-modal" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1611-fixes-asset-and-client-roles-permission">1611 Fixes asset and client roles permission<a class="headerlink" href="#1611-fixes-asset-and-client-roles-permission" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1614-fix-rol-permissions-in-agents-and-scheduler">1614 Fix rol permissions in agents and scheduler.<a class="headerlink" href="#1614-fix-rol-permissions-in-agents-and-scheduler" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1615-fix-rol-client-permissions-in-reports">1615 fix rol client permissions in reports<a class="headerlink" href="#1615-fix-rol-client-permissions-in-reports" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1625-add-new-activity-feed-design">1625 add new activity feed design<a class="headerlink" href="#1625-add-new-activity-feed-design" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1630-add-agents-submenu-in-the-sidebar-of-community-and-add-proptypes">1630 add agents submenu in the sidebar of community and add proptypes<a class="headerlink" href="#1630-add-agents-submenu-in-the-sidebar-of-community-and-add-proptypes" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1635-fix-bug-get-tags-list-when-loading-manage-view">1635 Fix bug get tags list when loading manage view.<a class="headerlink" href="#1635-fix-bug-get-tags-list-when-loading-manage-view" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1638-fix-width-of-dropdowns-in-ticketing-tools">1638 Fix width of dropdowns in ticketing tools.<a class="headerlink" href="#1638-fix-width-of-dropdowns-in-ticketing-tools" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1648-removing-bootstrap-dependency-and-adding-bootstrap-style">1648 Removing bootstrap dependency and adding bootstrap style<a class="headerlink" href="#1648-removing-bootstrap-dependency-and-adding-bootstrap-style" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1655-changes-solarwinds-web-help-desk-icon">1655 Changes SolarWinds Web Help Desk icon<a class="headerlink" href="#1655-changes-solarwinds-web-help-desk-icon" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1656-changed-comment-tab-displaying-behaviour-on-planner-added-comment-button">1656 Changed comment tab displaying behaviour on planner. Added comment button.<a class="headerlink" href="#1656-changed-comment-tab-displaying-behaviour-on-planner-added-comment-button" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1666-added-colors-to-ui-kit">1666 Added colors to UI kit<a class="headerlink" href="#1666-added-colors-to-ui-kit" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1667-ui-kit-add-typographic-styles_1">1667 Ui kit. Add typographic styles.<a class="headerlink" href="#1667-ui-kit-add-typographic-styles_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1670-ui-kit-add-select-component_1">1670 Ui kit. Add select component.<a class="headerlink" href="#1670-ui-kit-add-select-component_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1681-add-redirect-when-a-hosts-comment-is-clicked">1681 Add redirect when a host's comment is clicked.<a class="headerlink" href="#1681-add-redirect-when-a-hosts-comment-is-clicked" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1686-close-user-feedback-when-clicking-done-button">1686 Close user feedback when clicking done button.<a class="headerlink" href="#1686-close-user-feedback-when-clicking-done-button" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1688-change-vulns-by-status-graph-and-library-in-feed-1688">1688 Change vulns by status graph and library in feed. 1688.<a class="headerlink" href="#1688-change-vulns-by-status-graph-and-library-in-feed-1688" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1695-hide-edit-icon-in-reports-when-user-is-client-and-fix-text-of-createedit-button-1688">1695 Hide edit icon in reports when user is client and fix text of create/edit button. 1688.<a class="headerlink" href="#1695-hide-edit-icon-in-reports-when-user-is-client-and-fix-text-of-createedit-button-1688" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1696-adds-new-tour-sections-fix-tour-bug-in-activity-dashboards-item-in-sidebar">1696 Adds new tour sections. Fix tour bug in activity dashboard's item in sidebar.<a class="headerlink" href="#1696-adds-new-tour-sections-fix-tour-bug-in-activity-dashboards-item-in-sidebar" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1698-remove-fields-from-fields-dropdown-of-tasks-that-are-not-allowed">1698 Remove fields from fields dropdown of tasks that are not allowed.<a class="headerlink" href="#1698-remove-fields-from-fields-dropdown-of-tasks-that-are-not-allowed" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1707-fixes-bug-when-removing-workspaces-not-refreshing-the-table-properly">1707 Fixes bug when removing workspaces not refreshing the table properly<a class="headerlink" href="#1707-fixes-bug-when-removing-workspaces-not-refreshing-the-table-properly" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1709-fix-agents-tools-modal-and-add-repo_name-in-yaml">1709 Fix agents tools modal and add repo_name in yaml.<a class="headerlink" href="#1709-fix-agents-tools-modal-and-add-repo_name-in-yaml" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1710-fix-save-job-issue">1710 Fix save job issue<a class="headerlink" href="#1710-fix-save-job-issue" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1712-fixes-bug-of-app-crashing-due-to-eslint-changes-on-exhaustive-deps">1712 Fixes bug of app crashing due to ESLint changes on exhaustive deps.<a class="headerlink" href="#1712-fixes-bug-of-app-crashing-due-to-eslint-changes-on-exhaustive-deps" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1713-adds-date-filtering-on-vulns">1713 Adds date filtering on vulns<a class="headerlink" href="#1713-adds-date-filtering-on-vulns" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1717-fixes-style-issues-in-the-gant-and-split-view-of-planner">1717 Fixes style issues in the gant and split view of planner.<a class="headerlink" href="#1717-fixes-style-issues-in-the-gant-and-split-view-of-planner" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1721-fix-edit-ws-in-scheduler">1721 Fix edit ws in scheduler.<a class="headerlink" href="#1721-fix-edit-ws-in-scheduler" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1724-fixes-several-minor-issues-in-analytics">1724 Fixes several minor issues in Analytics.<a class="headerlink" href="#1724-fixes-several-minor-issues-in-analytics" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1726-add-external-id-and-tool-fields-in-jobs">1726 Add external id and tool fields in jobs.<a class="headerlink" href="#1726-add-external-id-and-tool-fields-in-jobs" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1739-adds-ldap-feature-validation-on-users">1739 Adds LDAP feature validation on users<a class="headerlink" href="#1739-adds-ldap-feature-validation-on-users" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1741-secret-keys-hidden">1741 Secret keys hidden<a class="headerlink" href="#1741-secret-keys-hidden" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1743-fixes-vulns-by-severity-in-dashboard-doesnt-work-properly_1">1743 Fixes vulns by severity in Dashboard doesnt work properly.<a class="headerlink" href="#1743-fixes-vulns-by-severity-in-dashboard-doesnt-work-properly_1" title="Permanent link">¶</a></h1>
+<h1 id="1743-fixes-most-vulnerable-assets-in-dashboard-doesnt-work-properly_1">1743 Fixes most vulnerable assets in Dashboard doesnt work properly.<a class="headerlink" href="#1743-fixes-most-vulnerable-assets-in-dashboard-doesnt-work-properly_1" title="Permanent link">¶</a></h1>
+<h1 id="1743-improve-styling_1">1743 Improve styling<a class="headerlink" href="#1743-improve-styling_1" title="Permanent link">¶</a></h1>
+<h1 id="1743-fixes-latest-all-vulns-doesnt-work-properly_1">1743 Fixes latest all vulns doesnt work properly<a class="headerlink" href="#1743-fixes-latest-all-vulns-doesnt-work-properly_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1745-the-behaviour-related-to-table-and-states-is-setted-to-be-the-same-in-several-pages">1745 The behaviour related to table and states is setted to be the same in several pages.<a class="headerlink" href="#1745-the-behaviour-related-to-table-and-states-is-setted-to-be-the-same-in-several-pages" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1747-adds-api-version-fetching-before-login">1747 Adds api version fetching before login<a class="headerlink" href="#1747-adds-api-version-fetching-before-login" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1749-fixes-bug-when-fetching-first-scan-command-id">1749 Fixes bug when fetching first scan command id<a class="headerlink" href="#1749-fixes-bug-when-fetching-first-scan-command-id" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1750-fix-crash-when-creating-a-report">1750 Fix crash when creating a report.<a class="headerlink" href="#1750-fix-crash-when-creating-a-report" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1752-fixes-bug-of-several-fields-on-manual-vuln-creation-being-cleared-when-switching-between-tabs-and-fixed-performance-issues-when-typing">1752 Fixes bug of several fields on Manual Vuln Creation being cleared when switching between tabs, and fixed performance issues when typing.<a class="headerlink" href="#1752-fixes-bug-of-several-fields-on-manual-vuln-creation-being-cleared-when-switching-between-tabs-and-fixed-performance-issues-when-typing" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1755-adds-title-on-scheduler-view-and-moved-add-schedule-button-to-the-right-of-the-actionbar">1755 Adds title on Scheduler view and moved 'Add Schedule' button to the right of the actionbar"<a class="headerlink" href="#1755-adds-title-on-scheduler-view-and-moved-add-schedule-button-to-the-right-of-the-actionbar" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1756-adds-ignore-informational-vulnerabilities-and-resolve-hostnames-flags-on-agent-execution">1756 Adds 'Ignore informational vulnerabilities' and 'Resolve hostnames' flags on agent execution<a class="headerlink" href="#1756-adds-ignore-informational-vulnerabilities-and-resolve-hostnames-flags-on-agent-execution" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1757-fixes-confirmedclosed-dropdown-selector-on-dashboard-overlapping-counts">1757 Fixes confirmed/closed dropdown selector on dashboard overlapping counts<a class="headerlink" href="#1757-fixes-confirmedclosed-dropdown-selector-on-dashboard-overlapping-counts" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1758-fixes-bug-of-label-overflowing-from-vuln-template-dropdown-selector-when-applying-a-vuln-template">1758 Fixes bug of label overflowing from vuln template dropdown selector when applying a vuln template<a class="headerlink" href="#1758-fixes-bug-of-label-overflowing-from-vuln-template-dropdown-selector-when-applying-a-vuln-template" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1759-sets-height-limit-to-apply-vuln-template-modal">1759 Sets height limit to 'apply vuln template' modal<a class="headerlink" href="#1759-sets-height-limit-to-apply-vuln-template-modal" title="Permanent link">¶</a></h1>
+</li>
+<li>1766 Expand and collapse buttons added to edit vulns.</li>
+<li>
+<h1 id="1768-fix-colors-in-status-dropdown-of-vulnerability-detail-1768">1768 Fix colors in status dropdown of vulnerability detail. 1768.<a class="headerlink" href="#1768-fix-colors-in-status-dropdown-of-vulnerability-detail-1768" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1769-adds-autotagging-feature-when-importing-vulns">1769 Adds autotagging feature when importing vulns<a class="headerlink" href="#1769-adds-autotagging-feature-when-importing-vulns" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1771-swagger-api-implementation_1">1771 Swagger api implementation<a class="headerlink" href="#1771-swagger-api-implementation_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1772-dashboard-typos-fix_1">1772 Dashboard Typos fix<a class="headerlink" href="#1772-dashboard-typos-fix_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1775-change-width-of-name-column-on-hostdetails-table_1">1775 Change width of name column on hostDetail's table<a class="headerlink" href="#1775-change-width-of-name-column-on-hostdetails-table_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1778-add-web-vulns-fields-in-vuln-creation-and-vuln-detail_1">1778. Add web vulns fields in vuln creation and vuln detail.<a class="headerlink" href="#1778-add-web-vulns-fields-in-vuln-creation-and-vuln-detail_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1779-add-field-scope-in-ws-creation-1779">1779 Add field scope in ws creation. 1779.<a class="headerlink" href="#1779-add-field-scope-in-ws-creation-1779" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1780-replace-issuetracker_json-field-for-issuetracker_1">1780 Replace issuetracker_json field for issuetracker<a class="headerlink" href="#1780-replace-issuetracker_json-field-for-issuetracker_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1783-add-portals-request-in-community-for-metrics-1783">1783 Add portal's request in community for metrics. 1783.<a class="headerlink" href="#1783-add-portals-request-in-community-for-metrics-1783" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1785-removes-several-warnings-on-debugger-console">1785 Removes several warnings on debugger console.<a class="headerlink" href="#1785-removes-several-warnings-on-debugger-console" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1786-fix-references-1786">1786 Fix references. 1786.<a class="headerlink" href="#1786-fix-references-1786" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1787-adds-new-scrollable-feature-to-vulnerability-detail">1787 Adds new scrollable feature to vulnerability detail<a class="headerlink" href="#1787-adds-new-scrollable-feature-to-vulnerability-detail" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1789-fixes-a-bug-of-not-displaying-actionbar-on-workspace-view-and-refactored-code">1789 Fixes a bug of not displaying actionbar on workspace view and refactored code.<a class="headerlink" href="#1789-fixes-a-bug-of-not-displaying-actionbar-on-workspace-view-and-refactored-code" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1790-fixes-double-requests-when-opening-vuln-detail">1790 Fixes double requests when opening vuln detail<a class="headerlink" href="#1790-fixes-double-requests-when-opening-vuln-detail" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1795-risk-information-and-cve-fields-added-to-vulndetail_1">1795 Risk information and cve fields added to vulnDetail<a class="headerlink" href="#1795-risk-information-and-cve-fields-added-to-vulndetail_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1796-add-shell-icon-in-activity-feed-card-and-fix-overflow-in-the-title-of-ws-in-grid-view_1">1796. Add shell icon in activity feed card. And fix overflow in the title of ws in grid view.<a class="headerlink" href="#1796-add-shell-icon-in-activity-feed-card-and-fix-overflow-in-the-title-of-ws-in-grid-view_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1798-changes-vulns-import-modal-style-adds-error-status-validation">1798 Changes vulns import modal style, adds 'Error' status validation<a class="headerlink" href="#1798-changes-vulns-import-modal-style-adds-error-status-validation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1800-fixes-bug-of-not-being-able-to-save-editions-on-workspaces">1800 Fixes bug of not being able to save editions on workspaces<a class="headerlink" href="#1800-fixes-bug-of-not-being-able-to-save-editions-on-workspaces" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1802-fixes-bug-of-markdown-editor-not-showing-content-when-disabled">1802 Fixes bug of Markdown editor not showing content when disabled<a class="headerlink" href="#1802-fixes-bug-of-markdown-editor-not-showing-content-when-disabled" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1808-added-refresh-button-to-manage">1808 Added refresh button to manage.<a class="headerlink" href="#1808-added-refresh-button-to-manage" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1812-adds-evidence-preview-and-modified-image-preview-styles">1812 Adds evidence preview and modified image preview styles<a class="headerlink" href="#1812-adds-evidence-preview-and-modified-image-preview-styles" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1820-fix-removed-searchbar-and-actionbar-when-entering-data-on-an-empty-ws-via-faraday-cli-and-reset-filters-when-switching-workspaces_1">1820. Fix removed searchbar and actionbar when entering data on an empty ws via faraday cli. And reset filters when switching workspaces.<a class="headerlink" href="#1820-fix-removed-searchbar-and-actionbar-when-entering-data-on-an-empty-ws-via-faraday-cli-and-reset-filters-when-switching-workspaces_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1821-apply-template-reference-fix_1">1821 apply template reference fix<a class="headerlink" href="#1821-apply-template-reference-fix_1" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1823-fixes-bug-when-adding-tags-on-file-import-without-vulns-uploaded">1823 Fixes bug when adding tags on file import without vulns uploaded.<a class="headerlink" href="#1823-fixes-bug-when-adding-tags-on-file-import-without-vulns-uploaded" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1824-fixes-vuln-detail-width">1824 Fixes vuln detail width.<a class="headerlink" href="#1824-fixes-vuln-detail-width" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1825-confirmed-flag-error-fix_1">1825 Confirmed flag error fix<a class="headerlink" href="#1825-confirmed-flag-error-fix_1" title="Permanent link">¶</a></h1>
+</li>
+</ul>
+<h2 id="1023-july-28th-2022">1.0.23 [July 28<sup>th</sup>, 2022]:<a class="headerlink" href="#1023-july-28th-2022" title="Permanent link">¶</a></h2>
+<ul>
+<li>Fixes login style</li>
+<li>Adds validation to saml and ldap users on creation modal</li>
+<li>Added new Dashboard filters </li>
+<li>Add asterisks in service modal.</li>
+<li>Removing unused libraries</li>
+<li>Replace markdown component in manual vuln creation with new one.</li>
+<li>Adds new Cloud Agents feature and changes agent logic, now workspace selection is an execution param instead of a creation param.</li>
+<li>Sets version 1.3.2 of react-markdown-editor-lite</li>
+<li>UI kit. Add textfield component. 1674.</li>
+<li>Ui Kit. Add new textarea component (1675)</li>
+<li>Add create date and owner order. Remove unused vendor column in assets.</li>
+<li>Fix filter bugs</li>
+<li>Reset order by and fix group by issue</li>
+<li>Fixes bug when filtering on workspace, modified searchbar style to make it consistent</li>
+<li>Fixes crash when entering to KB view and trying to get vuln templates.</li>
+<li>Fix bug when opening host detail.</li>
+<li>Fix assets typos.</li>
+<li>Adds feature flag validation on pro features.</li>
+<li>Add fields tool and external_id in search bar.</li>
+<li>Vulns by assets sorted from critical to low by default 
+Added filter to vulns in vulns by assets table </li>
+<li>Fixes Input exports to make it consistent between branches, enabling checkout without errors</li>
+<li>Removes mock user and executive report vieww</li>
+<li>Adds new readme and removes tracking.</li>
+<li>Fixes autofill bug when login in</li>
+<li>Fixes dropdown position on vuln creation</li>
+<li>Adds title on Agents view and moved 'Add Agent' button to the right of the actionbar</li>
+<li>Fixes conflicts between comm and prof branches</li>
+<li>
+<h1 id="1805-resolver-conflictos-entre-rama-communityprofessional">1805 - Resolver conflictos entre rama community/professional<a class="headerlink" href="#1805-resolver-conflictos-entre-rama-communityprofessional" title="Permanent link">¶</a></h1>
+</li>
+<li>1.0.23 [July 28<sup>th</sup>, 2022]:</li>
+</ul>
+<hr/>
+<ul>
+<li>
+<h1 id="1515-fixes-login-style">1515 Fixes login style<a class="headerlink" href="#1515-fixes-login-style" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1540-adds-validation-to-saml-and-ldap-users-on-creation-modal">1540 Adds validation to saml and ldap users on creation modal<a class="headerlink" href="#1540-adds-validation-to-saml-and-ldap-users-on-creation-modal" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1624-added-new-dashboard-filters">1624 Added new Dashboard filters<a class="headerlink" href="#1624-added-new-dashboard-filters" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1639-add-asterisks-in-service-modal">1639 Add asterisks in service modal.<a class="headerlink" href="#1639-add-asterisks-in-service-modal" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1649-removing-unused-libraries">1649 Removing unused libraries<a class="headerlink" href="#1649-removing-unused-libraries" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1661-replace-markdown-component-in-manual-vuln-creation-with-new-one">1661 Replace markdown component in manual vuln creation with new one.<a class="headerlink" href="#1661-replace-markdown-component-in-manual-vuln-creation-with-new-one" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1662-adds-new-cloud-agents-feature-and-changes-agent-logic-now-workspace-selection-is-an-execution-param-instead-of-a-creation-param">1662 Adds new Cloud Agents feature and changes agent logic, now workspace selection is an execution param instead of a creation param.<a class="headerlink" href="#1662-adds-new-cloud-agents-feature-and-changes-agent-logic-now-workspace-selection-is-an-execution-param-instead-of-a-creation-param" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1664-sets-version-132-of-react-markdown-editor-lite">1664 Sets version 1.3.2 of react-markdown-editor-lite<a class="headerlink" href="#1664-sets-version-132-of-react-markdown-editor-lite" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1674-ui-kit-add-textfield-component-1674">1674 UI kit. Add textfield component. 1674.<a class="headerlink" href="#1674-ui-kit-add-textfield-component-1674" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1675-ui-kit-add-new-textarea-component-1675">1675 Ui Kit. Add new textarea component (1675)<a class="headerlink" href="#1675-ui-kit-add-new-textarea-component-1675" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1690-add-create-date-and-owner-order-remove-unused-vendor-column-in-assets">1690 Add create date and owner order. Remove unused vendor column in assets.<a class="headerlink" href="#1690-add-create-date-and-owner-order-remove-unused-vendor-column-in-assets" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1693-fix-filter-bugs">1693 Fix filter bugs<a class="headerlink" href="#1693-fix-filter-bugs" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1697-reset-order-by-and-fix-group-by-issue">1697 Reset order by and fix group by issue<a class="headerlink" href="#1697-reset-order-by-and-fix-group-by-issue" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1699-fixes-bug-when-filtering-on-workspace-modified-searchbar-style-to-make-it-consistent">1699 Fixes bug when filtering on workspace, modified searchbar style to make it consistent<a class="headerlink" href="#1699-fixes-bug-when-filtering-on-workspace-modified-searchbar-style-to-make-it-consistent" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1715-fixes-crash-when-entering-to-kb-view-and-trying-to-get-vuln-templates">1715 Fixes crash when entering to KB view and trying to get vuln templates.<a class="headerlink" href="#1715-fixes-crash-when-entering-to-kb-view-and-trying-to-get-vuln-templates" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1719-fix-bug-when-opening-host-detail">1719 Fix bug when opening host detail.<a class="headerlink" href="#1719-fix-bug-when-opening-host-detail" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1720-fix-assets-typos">1720 Fix assets typos.<a class="headerlink" href="#1720-fix-assets-typos" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1723-adds-feature-flag-validation-on-pro-features">1723 Adds feature flag validation on pro features.<a class="headerlink" href="#1723-adds-feature-flag-validation-on-pro-features" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1725-add-fields-tool-and-external_id-in-search-bar">1725 Add fields tool and external_id in search bar.<a class="headerlink" href="#1725-add-fields-tool-and-external_id-in-search-bar" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1728-vulns-by-assets-sorted-from-critical-to-low-by-default">1728 Vulns by assets sorted from critical to low by default<a class="headerlink" href="#1728-vulns-by-assets-sorted-from-critical-to-low-by-default" title="Permanent link">¶</a></h1>
+Added filter to vulns in vulns by assets table </li>
+<li>
+<h1 id="1730-fixes-input-exports-to-make-it-consistent-between-branches-enabling-checkout-without-errors">1730 Fixes Input exports to make it consistent between branches, enabling checkout without errors<a class="headerlink" href="#1730-fixes-input-exports-to-make-it-consistent-between-branches-enabling-checkout-without-errors" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1732-removes-mock-user-and-executive-report-vieww">1732 Removes mock user and executive report vieww<a class="headerlink" href="#1732-removes-mock-user-and-executive-report-vieww" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1735-adds-new-readme-and-removes-tracking">1735 Adds new readme and removes tracking.<a class="headerlink" href="#1735-adds-new-readme-and-removes-tracking" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1742-fixes-autofill-bug-when-login-in">1742 Fixes autofill bug when login in<a class="headerlink" href="#1742-fixes-autofill-bug-when-login-in" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1746-fixes-dropdown-position-on-vuln-creation">1746 Fixes dropdown position on vuln creation<a class="headerlink" href="#1746-fixes-dropdown-position-on-vuln-creation" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1754-adds-title-on-agents-view-and-moved-add-agent-button-to-the-right-of-the-actionbar">1754 Adds title on Agents view and moved 'Add Agent' button to the right of the actionbar<a class="headerlink" href="#1754-adds-title-on-agents-view-and-moved-add-agent-button-to-the-right-of-the-actionbar" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1788-fixes-conflicts-between-comm-and-prof-branches">1788 Fixes conflicts between comm and prof branches<a class="headerlink" href="#1788-fixes-conflicts-between-comm-and-prof-branches" title="Permanent link">¶</a></h1>
+</li>
+<li>
+<h1 id="1805-resolver-conflictos-entre-rama-communityprofessional_1">1805 - Resolver conflictos entre rama community/professional<a class="headerlink" href="#1805-resolver-conflictos-entre-rama-communityprofessional_1" title="Permanent link">¶</a></h1>
+</li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/infobyte/faraday/" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 480 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/faradaysec" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.linkedin.com/company/faradaysec/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://instagram.com/faradaysec" rel="noopener" target="_blank" title="instagram.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>
